@@ -1,4 +1,4 @@
-/* Base styles */
+/* Base */
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +20,7 @@ body {
 .navbar {
   position: fixed;
   top: 20px;
-  left: 20px; /* top-left desktop buttons */
+  left: 20px;
   z-index: 1000;
 }
 
@@ -44,7 +44,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* Mobile nav hidden on desktop */
+/* Mobile nav */
 .mobile-nav {
   display: none;
 }
@@ -79,7 +79,7 @@ body {
   text-align: center;
 }
 
-/* Landing section */
+/* Landing */
 .landing {
   display: flex;
   justify-content: center;
@@ -136,11 +136,17 @@ body {
   margin: auto;
 }
 
-/* Mobile styles */
+/* Responsive */
 @media (max-width: 768px) {
   .desktop-nav {
     display: none; /* hide desktop buttons */
   }
 
   .mobile-nav {
-    display
+    display: block;
+    background: rgba(18,18,18,0.85);
+    padding: 10px 14px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
+}
