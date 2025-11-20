@@ -160,7 +160,35 @@ html, body {
   height: 40px;
   cursor: pointer;
 }
+/* Landing flex layout */
+.landing-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  height: 100vh;
+  flex-wrap: wrap; /* makes it responsive on smaller screens */
+  text-align: left;
+}
 
+.landing-text h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+}
+
+.landing-text p {
+  font-size: 1.4rem;
+  color: #b0b0b0;
+}
+
+/* Headshot styling */
+.landing-image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* makes it circular */
+  object-fit: cover;
+  border: 4px solid #e0e0e0;
+}
 /* Responsive */
 @media (max-width: 768px) {
   .desktop-nav {
@@ -169,6 +197,17 @@ html, body {
 
   .landing-btn {
     display: none;
+  }
+
+   .landing-flex {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .landing-image img {
+    width: 150px;
+    height: 150px;
   }
   .mobile-nav {
     display: block; /* show hamburger menu */
