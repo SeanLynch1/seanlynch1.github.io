@@ -155,12 +155,27 @@ html, body {
   margin: auto;
 }
 
+/* Landing button */
+.landing-btn {
+  display: block;
+  margin-right: 20px;
+}
+
+.landing-btn img {
+  width: 40px;  /* adjust size */
+  height: 40px;
+  cursor: pointer;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .desktop-nav {
     display: none; /* hide desktop navbar on mobile */
   }
 
+  .landing-btn {
+    display: none;
+  }
   .mobile-nav {
     display: block; /* show hamburger menu */
     background: rgba(18,18,18,0.85);
