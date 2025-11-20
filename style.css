@@ -1,114 +1,65 @@
-/* Base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #121212; /* Dark background */
-  color: #e0e0e0;
-  line-height: 1.6;
-}
-
-/* Navbar */
+/* Base navbar styling */
 .navbar {
   position: fixed;
   top: 20px;
-  right: 40px;
-  z-index: 100;
+  left: 20px;
+  z-index: 1000;
 }
 
-.navbar ul {
-  list-style: none;
+/* Desktop nav */
+.desktop-nav {
   display: flex;
-  gap: 20px;
+  gap: 15px;
 }
 
-.navbar a {
-  color: #e0e0e0;
+.desktop-nav a {
   text-decoration: none;
+  color: #e0e0e0;
   font-weight: 600;
-  padding: 10px 16px;
+  padding: 10px 14px;
   border-radius: 8px;
-  transition: background 0.25s;
+  transition: all 0.3s ease;
 }
 
-.navbar a:hover {
-  background-color: #1f1f1f;
+.desktop-nav a:hover {
+  background-color: #292929;
+  transform: translateY(-2px);
 }
 
-/* Section styling */
-.section {
-  padding: 150px 20px;
-  max-width: 900px;
-  margin: 0 auto;
+/* Mobile nav hidden by default */
+.mobile-nav {
+  display: none;
 }
 
-.section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-  text-align: center;
+#nav-links {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-/* Landing Section */
-.landing {
+#nav-links.active {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100vh;
 }
 
-.landing h1 {
-  font-size: 3rem;
-  margin-bottom: 12px;
+/* Hamburger styling */
+.nav-toggle {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #e0e0e0;
 }
 
-.landing p {
-  font-size: 1.3rem;
-  color: #b0b0b0;
-}
+/* Responsive */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none; /* hide desktop buttons on mobile */
+  }
 
-/* Skills List */
-.skills-list {
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.skills-list li {
-  background-color: #1f1f1f;
-  padding: 8px 12px;
-  border-radius: 6px;
-}
-
-/* Cards */
-.card {
-  background-color: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
-}
-
-.card h3 {
-  margin-bottom: 10px;
-  color: #ffffff;
-}
-
-/* Responsive container */
-.container {
-  width: 90%;
-  max-width: 900px;
-  margin: auto;
+  .mobile-nav {
+    display: block; /* show mobile hamburger */
+    background: rgba(18,18,18,0.85);
+    padding: 10px 14px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
 }
