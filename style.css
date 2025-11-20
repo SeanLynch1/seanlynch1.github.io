@@ -1,4 +1,3 @@
-/* Base */
 * {
   margin: 0;
   padding: 0;
@@ -20,11 +19,10 @@ body {
 .navbar {
   position: fixed;
   top: 20px;
-  left: 20px; /* top-left desktop buttons */
+  left: 20px;
   z-index: 1000;
 }
 
-/* Desktop nav */
 .desktop-nav {
   display: flex;
   gap: 15px;
@@ -44,7 +42,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Mobile nav */
 .mobile-nav {
   display: none;
 }
@@ -86,7 +83,7 @@ body {
   align-items: center;
   text-align: center;
   height: 100vh;
-  background: linear-gradient(135deg, #121212 0%, #1a1a1d 100%);
+  background-color: #121212;
 }
 
 .landing h1 {
@@ -129,17 +126,16 @@ body {
   color: #ffffff;
 }
 
-/* Container */
 .container {
   width: 90%;
   max-width: 900px;
   margin: auto;
 }
 
-/* Responsive */
+/* Mobile */
 @media (max-width: 768px) {
   .desktop-nav {
-    display: none; /* hide desktop buttons */
+    display: none;
   }
 
   .mobile-nav {
