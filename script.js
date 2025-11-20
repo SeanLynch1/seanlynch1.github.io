@@ -1,8 +1,11 @@
 const navToggle = document.getElementById('nav-toggle');
-const navLinks = document.getElementById('nav-links');
+const mobileOverlay = document.getElementById('mobile-overlay');
+const overlayClose = document.getElementById('overlay-close');
 
-if (navToggle && navLinks) {
-  navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-}
+navToggle.addEventListener('click', () => {
+  mobileOverlay.classList.add('active');
+});
+
+overlayClose.addEventListener('click', () => {
+  mobileOverlay.classList.remove('active');
+});
