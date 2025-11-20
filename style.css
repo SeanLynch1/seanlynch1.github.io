@@ -156,8 +156,8 @@ html, body {
 }
 
 .landing-btn img {
-  width: 20px;  /* adjust size */
-  height: 20px;
+  width: 40px;  /* adjust size */
+  height: 40px;
   cursor: pointer;
 }
 
