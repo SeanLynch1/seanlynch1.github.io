@@ -4,4 +4,3 @@ const navLinks = document.getElementById('nav-links');
 navToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
-// JavaScript ready for future features
