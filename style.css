@@ -91,6 +91,12 @@ html, body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+
+  /* Background image */
+  background-image: url('images/squares_white.png');
+  background-size: cover;       /* make it cover the whole section */
+  background-position: center;  /* center the image */
+  background-repeat: no-repeat; /* don’t repeat */
 }
 
 .landing h1 {
