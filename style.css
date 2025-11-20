@@ -42,7 +42,6 @@ body {
 }
 
 .desktop-nav a:hover {
-  background-color: #292929;
   transform: translateY(-2px);
 }
 
@@ -107,14 +106,12 @@ body {
 }
 
 .skills-list li {
-  background-color: #1f1f1f;
   padding: 8px 12px;
   border-radius: 6px;
 }
 
 /* Cards */
 .card {
-  background-color: #1e1e1e;
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -123,7 +120,6 @@ body {
 
 .card h3 {
   margin-bottom: 10px;
-  color: #ffffff;
 }
 
 .container {
