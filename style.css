@@ -1,134 +1,92 @@
-/* Reset / base styles */
+/* Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+  font-family: Arial, sans-serif;
+  background: #0d0d0f; /* Dark grey/black (ChatGPT-style) */
+  color: #e5e5e5;
   line-height: 1.6;
-  background: #f9f9f9;
 }
 
-a {
-  color: #0366d6;
-  text-decoration: none;
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  z-index: 10;
 }
 
-.container {
-  width: 90%;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Header / Navbar */
-.header {
-  background: #111;
-  color: #fff;
-  padding: 60px 0;
-  text-align: center;
-}
-
-.header h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.header p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-.nav ul {
+.navbar ul {
   list-style: none;
   display: flex;
-  justify-content: center;
-  gap: 30px;
+  gap: 20px;
 }
 
-.nav li {
-  margin: 0;
-}
-
-.nav a {
-  color: #fff;
+.navbar a {
+  color: #f0f0f0;
+  text-decoration: none;
   font-weight: bold;
-  padding: 8px 12px;
-  transition: background 0.3s;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background 0.25s;
 }
 
-.nav a:hover {
-  background: #333;
-  border-radius: 4px;
+.navbar a:hover {
+  background: #1f1f22;
 }
 
 /* Sections */
 .section {
-  padding: 80px 0;
+  padding: 120px 20px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .section h2 {
-  font-size: 2rem;
   margin-bottom: 20px;
+}
+
+/* Landing */
+.landing {
   text-align: center;
+  padding-top: 200px;
 }
 
-/* Skills Grid */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-.skill {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.skill h3 {
+.landing h1 {
+  font-size: 3rem;
   margin-bottom: 10px;
 }
 
-.skill p {
-  margin: 0;
+/* Skills */
+.skills-list {
+  list-style: none;
+  padding-left: 0;
 }
 
-/* Projects */
-.project {
-  background: #fff;
-  margin-bottom: 20px;
+.skills-list li {
+  margin-bottom: 8px;
+  padding-left: 10px;
+  border-left: 3px solid #444;
+}
+
+/* Cards (for Work + Experience) */
+.card {
+  background: #1a1a1d;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
 }
 
-.project h3 {
-  margin-bottom: 10px;
-}
-
-/* Contact */
-.contact {
-  text-align: center;
-}
-
-.contact a {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 15px;
-  background: #0366d6;
-  color: #fff;
-  border-radius: 4px;
-}
-
-/* Footer */
-.footer {
-  background: #111;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 0.9rem;
+.card h3 {
+  margin-bottom: 8px;
 }
