@@ -22,7 +22,7 @@ html, body {
   z-index: 1000;
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 80px;
 }
 
 /* Remove bullets and spacing from nav lists */
