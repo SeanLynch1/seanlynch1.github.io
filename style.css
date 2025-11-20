@@ -1,1 +1,154 @@
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: #121212; /* dark background */
+  font-family: 'Inter', sans-serif;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 20px; /* top-left for desktop */
+  z-index: 1000;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 15px;
+}
+
+.desktop-nav a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.desktop-nav a:hover {
+  background-color: #292929;
+  transform: translateY(-2px);
+}
+
+/* Mobile nav */
+.mobile-nav {
+  display: none;
+}
+
+#nav-links {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#nav-links.active {
+  display: flex;
+}
+
+.nav-toggle {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #e0e0e0;
+}
+
+/* Sections */
+.section {
+  padding: 150px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #121212; /* dark background for all sections */
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Landing Section */
+.landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  background-color: #121212;
+}
+
+.landing h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+}
+
+.landing p {
+  font-size: 1.4rem;
+  color: #b0b0b0;
+}
+
+/* Skills */
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.skills-list li {
+  background-color: #1f1f1f;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+/* Cards */
+.card {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none; /* hide desktop buttons on mobile */
+  }
+
+  .mobile-nav {
+    display: block; /* show mobile menu */
+    background: rgba(18,18,18,0.85);
+    padding: 10px 14px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
+}
 
