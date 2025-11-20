@@ -1,79 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name — Software Developer</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="header">
-    <div class="container">
-      <h1>Your Name</h1>
-      <p>Software Engineer / UX Designer / Game Developer</p>
-      <nav class="nav">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+  <nav class="navbar">
+    <ul>
+      <li><a href="#landing">Landing</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">My Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+    </ul>
+  </nav>
+
+  <section id="landing" class="section landing">
+    <h1>Your Name</h1>
+    <p>Short intro line, e.g. Software Developer based in Dublin.</p>
+  </section>
+
+  <section id="about" class="section about">
+    <h2>About Me</h2>
+    <p>Write your introduction here.</p>
+
+    <h3>Skills</h3>
+    <ul class="skills-list">
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>React</li>
+      <li>SQL</li>
+      <li>Cloud Computing</li>
+    </ul>
+  </section>
+
+  <section id="work" class="section work">
+    <h2>My Work</h2>
+
+    <div class="card">
+      <h3>Project One</h3>
+      <p>Description of a project.</p>
     </div>
-  </header>
 
-  <main class="container">
-
-    <section id="about" class="section about">
-      <h2>About Me</h2>
-      <p>Brief intro: who you are, what you do, your background.</p>
-    </section>
-
-    <section id="skills" class="section skills">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill">
-          <h3>Programming</h3>
-          <p>JavaScript, Python, C#</p>
-        </div>
-        <div class="skill">
-          <h3>Design</h3>
-          <p>UX/UI, Figma, Prototyping</p>
-        </div>
-        <div class="skill">
-          <h3>Game Dev</h3>
-          <p>Unity, Game Design</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section projects">
-      <h2>Projects / Experience</h2>
-      <div class="project">
-        <h3>Project One</h3>
-        <p>Description of a major project, technologies used, your role.</p>
-      </div>
-      <div class="project">
-        <h3>Project Two</h3>
-        <p>Another project description.</p>
-      </div>
-      <!-- add more projects as needed -->
-    </section>
-
-    <section id="contact" class="section contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-      <p><a href="CV.pdf" target="_blank">Download my CV / Resume</a></p>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 Your Name</p>
+    <div class="card">
+      <h3>Project Two</h3>
+      <p>Description of another project.</p>
     </div>
-  </footer>
+  </section>
+
+  <section id="experience" class="section experience">
+    <h2>Experience</h2>
+
+    <div class="card">
+      <h3>Role / Company</h3>
+      <p>Details about your job or experience.</p>
+    </div>
+
+    <div class="card">
+      <h3>Another Role</h3>
+      <p>More experience details.</p>
+    </div>
+  </section>
 
 </body>
 </html>
