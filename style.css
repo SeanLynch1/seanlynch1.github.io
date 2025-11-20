@@ -1,4 +1,4 @@
-/* Base reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -10,21 +10,22 @@ html, body {
   background-color: #121212; /* dark background */
   font-family: 'Inter', sans-serif;
   color: #e0e0e0;
-  line-height: 1.6;
-}
-
-html {
   scroll-behavior: smooth;
+  line-height: 1.6;
 }
 
 /* Navbar */
 .navbar {
   position: fixed;
   top: 20px;
-  left: 20px; /* top-left for desktop */
+  left: 20px; /* top-left */
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
+/* Desktop navbar */
 .desktop-nav {
   display: flex;
   gap: 15px;
@@ -44,9 +45,15 @@ html {
   transform: translateY(-2px);
 }
 
-/* Mobile nav */
+/* Mobile navbar */
 .mobile-nav {
   display: none;
+}
+
+.nav-toggle {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #e0e0e0;
 }
 
 #nav-links {
@@ -60,34 +67,20 @@ html {
   display: flex;
 }
 
-.nav-toggle {
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #e0e0e0;
-}
-
 /* Sections */
 .section {
   padding: 150px 20px;
   max-width: 900px;
   margin: 0 auto;
-  background-color: #121212; /* dark background for all sections */
-}
-
-.section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
+  background-color: #121212;
   text-align: center;
 }
 
-/* Landing Section */
 .landing {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   height: 100vh;
-  background-color: #121212;
 }
 
 .landing h1 {
@@ -117,12 +110,21 @@ html {
 }
 
 /* Cards */
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
 .card {
   background-color: #1e1e1e;
   padding: 20px;
   border-radius: 10px;
-  margin-bottom: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  width: 250px;
+  text-align: left;
 }
 
 .card h3 {
@@ -140,15 +142,14 @@ html {
 /* Responsive */
 @media (max-width: 768px) {
   .desktop-nav {
-    display: none; /* hide desktop buttons on mobile */
+    display: none; /* hide desktop navbar on mobile */
   }
 
   .mobile-nav {
-    display: block; /* show mobile menu */
+    display: block; /* show hamburger menu */
     background: rgba(18,18,18,0.85);
     padding: 10px 14px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   }
 }
-
