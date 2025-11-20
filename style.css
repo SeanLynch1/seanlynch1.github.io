@@ -25,6 +25,14 @@ html, body {
   gap: 20px;
 }
 
+/* Remove bullets and default list spacing for navs */
+.desktop-nav,
+#nav-links {
+  list-style: none; /* remove bullets */
+  padding-left: 0;  /* remove default indentation */
+  margin: 0;
+}
+
 /* Desktop navbar */
 .desktop-nav {
   display: flex;
