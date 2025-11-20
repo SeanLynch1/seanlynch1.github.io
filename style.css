@@ -25,11 +25,13 @@ html, body {
   gap: 20px;
 }
 
-/* Remove bullets and default list spacing for navs */
+/* Remove bullets and spacing from nav lists */
 .desktop-nav,
-#nav-links {
-  list-style: none; /* remove bullets */
-  padding-left: 0;  /* remove default indentation */
+.desktop-nav li,
+#nav-links,
+#nav-links li {
+  list-style: none;   /* removes bullets */
+  padding: 0;
   margin: 0;
 }
 
