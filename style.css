@@ -165,10 +165,10 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
   height: 100vh;
-  flex-wrap: wrap; /* makes it responsive on smaller screens */
   text-align: left;
+  flex-wrap: nowrap; /* makes it responsive on smaller screens */
 }
 
 .landing-text h1 {
@@ -183,11 +183,11 @@ html, body {
 
 /* Headshot styling */
 .landing-image img {
-  width: 200px;
-  height: 200px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%; /* makes it circular */
   object-fit: cover;
-  border: 4px solid #e0e0e0;
+  border: 3px solid #e0e0e0;
 }
 /* Responsive */
 @media (max-width: 768px) {
@@ -202,12 +202,12 @@ html, body {
    .landing-flex {
     flex-direction: column;
     text-align: center;
-    gap: 20px;
+    gap: 15px;
   }
 
   .landing-image img {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
   }
   .mobile-nav {
     display: block; /* show hamburger menu */
