@@ -7,35 +7,31 @@
 
 html, body {
   height: 100%;
-  background-color: #121212; /* dark background */
+  background-color: #121212;
   font-family: 'Inter', sans-serif;
   color: #e0e0e0;
   scroll-behavior: smooth;
   line-height: 1.6;
 }
 
-/* Navbar */
+/* Desktop Navbar */
 .navbar {
   position: fixed;
   top: 20px;
-  left: 20px; /* top-left */
+  left: 20px;
   z-index: 1000;
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-/* Remove bullets and spacing from nav lists */
 .desktop-nav,
-.desktop-nav li,
-#nav-links,
-#nav-links li {
-  list-style: none;   /* removes bullets */
+.desktop-nav li {
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* Desktop navbar */
 .desktop-nav {
   display: flex;
   gap: 15px;
@@ -55,28 +51,6 @@ html, body {
   transform: translateY(-2px);
 }
 
-/* Mobile navbar */
-.mobile-nav {
-  display: none;
-}
-
-.nav-toggle {
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #e0e0e0;
-}
-
-#nav-links {
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-#nav-links.active {
-  display: flex;
-}
-
 /* Sections */
 .section {
   padding: 150px 20px;
@@ -86,6 +60,7 @@ html, body {
   text-align: center;
 }
 
+/* Landing Section */
 .landing {
   display: flex;
   justify-content: center;
@@ -93,14 +68,33 @@ html, body {
   height: 100vh;
 }
 
-.landing h1 {
+.landing-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 100vh;
+  text-align: left;
+  flex-wrap: nowrap;
+}
+
+.landing-text h1 {
   font-size: 3.5rem;
   margin-bottom: 15px;
 }
 
-.landing p {
+.landing-text p {
   font-size: 1.4rem;
   color: #b0b0b0;
+}
+
+/* Headshot styling */
+.landing-image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e0e0e0;
 }
 
 /* Skills */
@@ -149,48 +143,19 @@ html, body {
   margin: auto;
 }
 
-/* Landing button */
+/* Landing button (desktop only) */
 .landing-btn {
   display: block;
   margin-right: 20px;
 }
 
 .landing-btn img {
-  width: 40px;  /* adjust size */
+  width: 40px;
   height: 40px;
   cursor: pointer;
 }
-/* Landing flex layout */
-.landing-flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  height: 100vh;
-  text-align: left;
-  flex-wrap: nowrap; /* makes it responsive on smaller screens */
-}
 
-.landing-text h1 {
-  font-size: 3.5rem;
-  margin-bottom: 15px;
-}
-
-.landing-text p {
-  font-size: 1.4rem;
-  color: #b0b0b0;
-}
-
-/* Headshot styling */
-.landing-image img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%; /* makes it circular */
-  object-fit: cover;
-  border: 3px solid #e0e0e0;
-}
-
-/* Mobile header bar */
+/* Mobile Header + Overlay */
 .mobile-header {
   position: fixed;
   top: 0;
@@ -205,18 +170,17 @@ html, body {
   box-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
-/* Hamburger icon */
 .nav-toggle {
   font-size: 1.8rem;
   cursor: pointer;
   color: #e0e0e0;
 }
 
-/* Overlay menu */
+/* Overlay Menu */
 .mobile-overlay {
   position: fixed;
   top: 0;
-  left: -100%; /* hidden by default */
+  left: -100%;
   width: 100%;
   height: 100%;
   background-color: #121212;
@@ -228,38 +192,27 @@ html, body {
   flex-direction: column;
 }
 
-/* Show overlay */
 .mobile-overlay.active {
   left: 0;
 }
 
-/* Overlay content */
 .overlay-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px 20px 40px; /* top padding avoids header */
+  padding: 80px 20px 40px;
 }
 
-/* Landing image in overlay */
-.overlay-landing img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
+/* Landing button in overlay */
+.overlay-landing-btn {
+  display: block;
+  margin-bottom: 40px;
 }
 
-/* Overlay text */
-.overlay-landing h1 {
-  font-size: 2rem;
-  margin-bottom: 8px;
-}
-
-.overlay-landing p {
-  font-size: 1rem;
-  color: #b0b0b0;
-  margin-bottom: 30px;
+.overlay-landing-btn img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 }
 
 /* Overlay links */
@@ -303,10 +256,10 @@ html, body {
   background-color: #292929;
 }
 
-/* Responsive */
+/* Responsive Mobile */
 @media (max-width: 768px) {
-  .desktop-nav, .mobile-nav, .landing-btn {
-    display: none;
+  .desktop-nav, .landing-btn {
+    display: none; /* hide desktop nav and button */
   }
 
   .landing-flex {
@@ -318,12 +271,5 @@ html, body {
   .landing-image img {
     width: 100px;
     height: 100px;
-  }
-  .mobile-nav {
-    display: block; /* show hamburger menu */
-    background: rgba(18,18,18,0.85);
-    padding: 10px 14px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   }
 }
