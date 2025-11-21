@@ -160,8 +160,11 @@ html, body {
 ====================== */
 
 /* Wrap all mobile styles in media query */
-@media (max-width: 768px) {
-
+@media (max-width: 769px) {
+  .mobile-header,
+  .mobile-overlay {
+    display: none;
+  }
   /* Hide desktop navbar on mobile */
   .desktop-nav, .landing-btn {
     display: none;
