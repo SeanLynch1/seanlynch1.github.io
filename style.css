@@ -64,8 +64,9 @@ html, body {
 .landing {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: flex-start; /* align content to top instead of center */
+  padding-top: 60px; /* small padding from top of viewport */
+  height: auto; /* remove full viewport height */
 }
 
 .landing-flex {
@@ -253,8 +254,9 @@ html, body {
 
   .landing-flex {
     flex-direction: column;
-    text-align: center;
+    align-items: center; /* center horizontally on mobile */
     gap: 15px;
+    text-align: center;
   }
 
   .landing-image img {
