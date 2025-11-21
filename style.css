@@ -150,8 +150,8 @@ html, body {
 }
 
 .landing-btn img {
-  width: 40px;
-  height: 40px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
 }
 
@@ -236,8 +236,8 @@ html, body {
 
   /* Landing button in overlay (small) */
   .overlay-landing-btn img {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     cursor: pointer;
   }
 
