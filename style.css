@@ -180,38 +180,36 @@ html, body {
 .mobile-overlay {
   position: fixed;
   top: 0;
-  left: -100%;
+  left: -100%; /* hidden by default */
   width: 100%;
   height: 100%;
   background-color: #121212;
   color: #e0e0e0;
-  z-index: 1000;
+  z-index: 1002; /* higher than header */
   transition: left 0.4s ease;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* top + bottom alignment */
+  align-items: center;
 }
 
 .mobile-overlay.active {
   left: 0;
 }
 
-.overlay-content {
+/* Overlay top content (landing button + links) */
+.overlay-top {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px 20px 40px;
+  margin-top: 80px; /* padding from top */
+  gap: 30px;
 }
 
 /* Landing button in overlay */
-.overlay-landing-btn {
-  display: block;
-  margin-bottom: 40px;
-}
-
 .overlay-landing-btn img {
-  width: 40px;
-  height: 40px;
+  width: 30px;  /* smaller image */
+  height: 30px;
   cursor: pointer;
 }
 
@@ -221,7 +219,6 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 100%;
   text-align: center;
 }
 
@@ -229,31 +226,23 @@ html, body {
   color: #e0e0e0;
   text-decoration: none;
   font-size: 1.2rem;
-  padding: 10px;
   transition: background 0.3s;
 }
 
 .overlay-links a:hover {
   background-color: #292929;
   border-radius: 8px;
+  padding: 10px 0; /* slight padding for hover effect */
 }
 
-/* Close button */
+/* Bottom X (no button border, bottom-center) */
 .overlay-close {
-  margin-top: auto;
-  margin-bottom: 20px;
-  background: none;
-  border: 2px solid #e0e0e0;
+  font-size: 2rem;
   color: #e0e0e0;
-  font-size: 1.5rem;
-  padding: 8px 16px;
-  border-radius: 8px;
+  background: none;
+  border: none;
   cursor: pointer;
-  transition: background 0.3s;
-}
-
-.overlay-close:hover {
-  background-color: #292929;
+  margin-bottom: 40px; /* distance from bottom */
 }
 
 /* Responsive Mobile */
