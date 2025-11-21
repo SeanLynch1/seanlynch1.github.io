@@ -53,7 +53,7 @@ html, body {
 
 /* Sections */
 .section {
-  padding: 150px 20px;
+  padding: 60px 20px 60px 20px; /* reduced top padding */
   max-width: 900px;
   margin: 0 auto;
   background-color: #121212;
@@ -63,18 +63,17 @@ html, body {
 /* Landing Section */
 .landing {
   display: flex;
-  justify-content: center;
-  align-items: flex-start; /* align content to top instead of center */
-  padding-top: 60px; /* small padding from top of viewport */
-  height: auto; /* remove full viewport height */
+  justify-content: flex-start;
+  align-items: flex-start; /* align content to top */
+  padding-top: 20px; /* start closer to top */
+  height: auto;
 }
 
 .landing-flex {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 30px;
-  height: 100vh;
   text-align: left;
   flex-wrap: nowrap;
 }
@@ -156,111 +155,118 @@ html, body {
   cursor: pointer;
 }
 
-/* Mobile Header + Overlay */
-.mobile-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background-color: #121212;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  z-index: 1001;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
+/* ======================
+   Mobile Header + Overlay
+====================== */
 
-.nav-toggle {
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #e0e0e0;
-}
-
-/* Overlay Menu */
-.mobile-overlay {
-  position: fixed;
-  top: 0;
-  left: -100%; /* hidden by default */
-  width: 100%;
-  height: 100%;
-  background-color: #121212;
-  color: #e0e0e0;
-  z-index: 1002; /* higher than header */
-  transition: left 0.4s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* top + bottom alignment */
-  align-items: center;
-}
-
-.mobile-overlay.active {
-  left: 0;
-}
-
-/* Overlay top content (landing button + links) */
-.overlay-top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 80px; /* padding from top */
-  gap: 30px;
-}
-
-/* Landing button in overlay */
-.overlay-landing-btn img {
-  width: 30px;  /* smaller image */
-  height: 30px;
-  cursor: pointer;
-}
-
-/* Overlay links */
-.overlay-links {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  text-align: center;
-}
-
-.overlay-links a {
-  color: #e0e0e0;
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: background 0.3s;
-}
-
-.overlay-links a:hover {
-  background-color: #292929;
-  border-radius: 8px;
-  padding: 10px 0; /* slight padding for hover effect */
-}
-
-/* Bottom X (no button border, bottom-center) */
-.overlay-close {
-  font-size: 2rem;
-  color: #e0e0e0;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-bottom: 40px; /* distance from bottom */
-}
-
-/* Responsive Mobile */
+/* Wrap all mobile styles in media query */
 @media (max-width: 768px) {
+
+  /* Hide desktop navbar on mobile */
   .desktop-nav, .landing-btn {
-    display: none; /* hide desktop nav and button */
+    display: none;
   }
 
+  /* Landing section adjustments */
   .landing-flex {
     flex-direction: column;
-    align-items: center; /* center horizontally on mobile */
-    gap: 15px;
+    align-items: center;
     text-align: center;
+    gap: 15px;
   }
 
   .landing-image img {
     width: 100px;
     height: 100px;
+  }
+
+  /* Mobile header */
+  .mobile-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #121212;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1001;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+
+  .nav-toggle {
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #e0e0e0;
+  }
+
+  /* Mobile overlay */
+  .mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+    color: #e0e0e0;
+    z-index: 1002;
+    transition: left 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* top + bottom alignment */
+    align-items: center;
+  }
+
+  .mobile-overlay.active {
+    left: 0;
+  }
+
+  /* Overlay top content (landing button + links) */
+  .overlay-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    gap: 20px;
+  }
+
+  /* Landing button in overlay (small) */
+  .overlay-landing-btn img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  /* Overlay links */
+  .overlay-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .overlay-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+  }
+
+  .overlay-links a:hover {
+    background-color: #292929;
+    border-radius: 8px;
+    padding: 10px 0;
+  }
+
+  /* Bottom X */
+  .overlay-close {
+    font-size: 2rem;
+    color: #e0e0e0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 40px;
   }
 }
