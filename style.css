@@ -208,8 +208,8 @@ html, body {
 
 /* Landing button in overlay */
 .overlay-landing-btn img {
-  width: 10px;  /* smaller image */
-  height: 10px;
+  width: 30px;  /* smaller image */
+  height: 30px;
   cursor: pointer;
 }
 
