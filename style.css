@@ -27,7 +27,7 @@ html, body {
 
 /* Divider below name */
 .landing-divider {
-  width: 60px;        /* short line */
+  width: 240px;        /* short line */
   border: 2px solid #e0e0e0;
   margin: 15px 0;     /* space above and below */
 }
@@ -58,7 +58,7 @@ html, body {
 }
 
 .landing-text p {
-  font-size: 1.8rem;
+  font-size: .8rem;
   line-height: 1.5;          /* nicer readability */
   color: #b0b0b0;
 }
@@ -288,7 +288,7 @@ html, body {
   .landing {
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
+    align-items: left;
     padding-top: 50px; /* space for navbar */
     height: 100vh;       /* full viewport height */
     margin-top: 0;       /* remove mobile margin */
@@ -307,7 +307,7 @@ html, body {
   }
 
   .landing-text p {
-    font-size: 1.8rem;
+    font-size: .8rem;
   }
 
   .landing-image img {
