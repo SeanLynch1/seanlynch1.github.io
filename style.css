@@ -149,6 +149,14 @@ html, body {
   margin: auto;
 }
 
+/* Hide mobile header & overlay on desktop */
+@media (min-width: 769px) {
+  .mobile-header,
+  .mobile-overlay {
+    display: none;
+  }
+}
+
 /* ======================
    Mobile Styles
 ====================== */
