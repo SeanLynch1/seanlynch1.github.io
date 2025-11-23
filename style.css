@@ -19,7 +19,7 @@ html, body {
 /* Base Sections */
 .section {
   padding: 50px 20px;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto 60px auto;
   background-color: #121212;
   text-align: center;
@@ -27,7 +27,7 @@ html, body {
 
 /* Divider below name */
 .landing-divider {
-  width: 240px;        /* short line */
+  width: 500px;        /* short line */
   border: 2px solid #e0e0e0;
   margin: 15px 0;     /* space above and below */
 }
@@ -47,13 +47,13 @@ html, body {
 /* Landing Text */
 .landing-text {
   display: flex;
-  flex-direction: column;    /* name, divider, intro stacked */
+  flex-direction: row;    /* name, divider, intro stacked */
   justify-content: flex-start;
-  max-width: 600px;          /* keeps text from stretching too wide */
+  max-width: 900px;          /* keeps text from stretching too wide */
 }
 
 .landing-text h1 {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   margin-bottom: 10px;
 }
 
