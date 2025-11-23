@@ -15,7 +15,7 @@ html, body {
 }
 
 /* Desktop Navbar */
-.navbar {
+.desktop-navbar {
   position: fixed;
   top: 20px;
   left: 20px;
@@ -25,7 +25,6 @@ html, body {
   gap: 20px;
 }
 
-.desktop-nav,
 .desktop-nav li {
   list-style: none;
   padding: 0;
@@ -156,7 +155,7 @@ html, body {
 @media (max-width: 768px) {
 
   /* Hide desktop navbar */
-  .navbar {
+  .desktop-navbar {
     display: none;
   }
 
