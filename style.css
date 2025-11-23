@@ -69,6 +69,7 @@ html, body {
 
 /* Landing Section */
 .landing {
+  margin-top: 80px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
