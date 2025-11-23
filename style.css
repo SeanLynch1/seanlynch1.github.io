@@ -32,7 +32,7 @@ html, body {
   align-items: center;
   text-align: center;
   padding-top: 50px;
-  height: auto;
+  height: 100vh;
 }
 
 .landing-flex {
