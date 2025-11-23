@@ -28,10 +28,11 @@ html, body {
 /* Base Landing */
 .landing {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   height: 100vh;
+  gap: 30px;
 }
 
 .landing-flex {
