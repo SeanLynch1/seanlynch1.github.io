@@ -35,6 +35,10 @@ html, body {
   gap: 30px;
 }
 
+.landing-text {
+  text-align: left;  /* aligns heading and paragraph to the left */
+}
+
 .landing-flex {
   display: flex;
   flex-direction: column;
