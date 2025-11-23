@@ -296,9 +296,10 @@ html, body {
   }
 
   .landing-flex {
+    display: flex;
     flex-direction: row;
     gap: 50px;
-    text-align: left;
+    align-items: flex-start;
   }
 
   .landing-text h1 {
