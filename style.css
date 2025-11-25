@@ -259,6 +259,10 @@ section {
     transition: all 0.3s ease;
   }
 
+  .highlight-name {
+  color: #ff3b3b; /* or any red you prefer */
+  }
+
   .desktop-nav a:hover {
     background-color: #292929;
     transform: translateY(-2px);
@@ -303,20 +307,27 @@ section {
   }
 
   .landing-text h1 {
-    font-size: 3.8rem;
-    margin-bottom: 10px;
+    font-size: 3.5rem;
+    margin-bottom: 0px;
+  }
+
+  .landing-text h2 {
+    font-size: 3rem;
+    margin-bottom: 0px;
+    margin-top: -10px;
   }
 
   .landing-divider {
     width: 100%;
     max-width: 600px;        /* short line */
     border: 2px solid #e0e0e0;
-    margin: 15px 0;     /* space above and below */
+    margin: 0px 0;     /* space above and below */
   }
 
   .landing-text p {
     font-size: 1rem;
-    line-height: 2.5;          /* nicer readability */
+    line-height: 1.5;          /* nicer readability */
+    margin: 10px 0;   
     color: #b0b0b0;
   }
 
@@ -331,6 +342,6 @@ section {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #e0e0e0;
+  border: 4px solid #e0e0e0;
 }
 }
