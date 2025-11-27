@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sean LYNCH DOG</title>
+  <title>Sean Lynch</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -55,53 +58,144 @@
           </p>
         </div>
         <div class="landing-image">
-          <img src="images/headshot_coloured_background.png" alt="Sean Lynch Headshot">
+          <img id="headshot" src="images/headshot_coloured_background.png" alt="Sean Lynch Headshot">
+           <div id="secret-wrapper" style="display:none;">
+              <div id="secret-text">I love my girlfriend ❤️</div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- About Section with wave -->
     <section id="about" class="section about">
+      <!-- TOP wave (two layers) -->
+      <img src="images/layered-waves.svg" alt="Top wave" class="top-wave-image">
+
+
       <div class="container">
-        <h2>About Me</h2>
-        <p>Short intro about you.</p>
-        <h3>Skills</h3>
-        <ul class="skills-list">
-          <li>C#</li>
-          <li>Python</li>
-          <li>Data Engineering</li>
-          <li>Game Development</li>
-          <li>SQL & Databases</li>
-          <li>APIs</li>
-        </ul>
+        <h2 class="section-header">About</h2>
+
+        <!-- Subheader -->
+        <h3 class="section-subheader">Skills</h3>
+        <hr class="skills-divider">
+
+        <!-- Skills Grid -->
+        <div class="skills-grid">
+          <div class="skill-tile">
+              <div class="skill-tile-inner">
+                <!-- Front side -->
+                <div class="skill-tile-front">
+                  <img src="images/git.png" alt="Git">
+                  <p>Git Version Control</p>
+                </div>
+                <!-- Back side -->
+                <div class="skill-tile-back">
+                  <p>Experience with branching, merging, and version control workflows.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-tile">
+              <div class="skill-tile-inner">
+                <div class="skill-tile-front">
+                  <img src="images/app-design.png" alt="App Design">
+                  <p>App Design</p>
+                </div>
+                <div class="skill-tile-back">
+                  <p>Creating intuitive UI/UX for both mobile and PC software applications.</p>
+                </div>
+              </div>
+            </div>
+
+          <div class="skill-tile">
+            <div class="skill-tile-inner">
+              <div class="skill-tile-front">
+                <img src="images/backend.png" alt="Back-end Development">
+                <p>Back-end Development</p>
+              </div>
+              <div class="skill-tile-back">
+                <p>Building and maintaining server-side applications and APIs.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-tile">
+            <div class="skill-tile-inner">
+              <div class="skill-tile-front">
+                <img src="images/web-dev.png" alt="Web Development">
+                <p>Web Development</p>
+              </div>
+              <div class="skill-tile-back">
+                <p>Web development using CSS, HTML, and Java Script.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-tile">
+            <div class="skill-tile-inner">
+              <div class="skill-tile-front">
+                <img src="images/apis.png" alt="APIs">
+                <p>Application Programming Interfaces</p>
+              </div>
+              <div class="skill-tile-back">
+                <p>I designed python packages at Bank of Ireland that would allow their systems and external systems outside the bank to communicate.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-tile">
+            <div class="skill-tile-inner">
+              <div class="skill-tile-front">
+                <img src="images/game-dev.png" alt="Game Development">
+                <p>Game Development</p>
+              </div>
+              <div class="skill-tile-back">
+                <p> Experience making video games with C# and the Unity Game Engine.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-tile">
+            <div class="skill-tile-inner">
+              <div class="skill-tile-front">
+                <img src="images/powerbi.png" alt="Power BI Dashboarding">
+                <p>Power BI Dashboarding</p>
+              </div>
+              <div class="skill-tile-back">
+                <p> Experience building optimized dashboards for clients at Grant Thornton. </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-tile">
+            <div class="skill-tile-inner">
+              <div class="skill-tile-front">
+                <img src="images/software-testing.png" alt="Software Testing">
+                <p>Database Design</p>
+              </div>
+              <div class="skill-tile-back">
+                <p>Experienced in unit testing, creating test cases, and using the Software Development Lifecycle to deliver code to production.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-tile">
+            <div class="skill-tile-inner">
+              <div class="skill-tile-front">
+                <img src="images/communications.png" alt="Communication">
+                <p>Communication</p>
+              </div>
+              <div class="skill-tile-back">
+                <p>Experienced in professional and academic presentations, including client demos and communicating logic.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Three-layer wavy divider -->
-<svg class="section-divider wavy" viewBox="0 0 1440 320" preserveAspectRatio="none" style="display:block;width:100%;height:160px;">
-  <!-- Back wave (darkest) -->
-  <path d="
-    M0,160
-    C140,1200 480,120 720,160
-    C960,200 1200,230 1440,1600
-    L1440,320 L0,3220 Z"
-    fill="#0c0c0c"/>
 
-  <!-- Middle wave -->
-  <path d="
-    M0,140
-    C220,180 480,90 720,140
-    C5260,190 1200,3100 1440,140
-    L1440,320 L0,320 Z"
-    fill="#141414"/>
-
-  <!-- Front wave (lightest) -->
-  <path d="
-    M0,120
-    C240,160 480,630 720,120
-    C960,180 1200,80 14240,120
-    L1440,320 L0,320 Z"
-    fill="#1b1b1b"/>
-</svg>
+      <img src="images/layered-waves-bottom.svg" alt="Bottom wave" class="bottom-wave-image">
 
     </section>
 
@@ -122,6 +216,8 @@
 
     <!-- Experience Section -->
     <section id="experience" class="section experience">
+      <img src="images/layered-waves-top.svg" alt="Top wave" class="top-wave-image">
+      
       <div class="container">
         <h2>Experience</h2>
         <div class="card">
@@ -140,6 +236,9 @@
           <p>Delivering data solutions using SQL, Python, and Power BI. Focused on analytics, reporting, and data engineering projects for clients.</p>
         </div>
       </div>
+
+      <img src="images/layered-waves-bottom2.svg" alt="Bottom wave" class="bottom-wave-image">
+
     </section>
 
   </div>

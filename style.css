@@ -1,6 +1,25 @@
 /* ======================
    Reset & Base Styles
 ====================== */
+:root {
+  --layout-side: 2vw;
+  --navbar-width: 180px; /* width of navbar column */
+  --font-heading: 6rem;      /* for main headings */
+  --font-subheading: 3.5rem;   /* for subheadings */
+  --font-body: 1.2rem;         /* for normal text */
+
+  /* Fonts */
+  --font-header-family: 'Roboto', sans-serif;
+  --font-body-family: 'Inter', sans-serif;
+  
+  /* Colors */
+  --color-red: #ff3b3b;     /* bright red */
+  --color-background-main: #121212;   /* orange */
+  --color-background-alt: #1e1e1e;  /* dark grey background */
+  --color-text: #e0e0e0;        /* main text */
+  --color-muted: #b0b0b0;       /* lighter text */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,12 +28,106 @@
 
 html, body {
   height: 100%;
-  background-color: #121212;
-  font-family: 'Inter', sans-serif;
+  background-color: var(--color-background-main);
+  font-family: var(--font-body-family);
   color: #e0e0e0;
   scroll-behavior: smooth;
   line-height: 1.6;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-header-family);
+  font-weight: 700; /* bold */
+}
+
+body, p, span, li, a:not(.desktop-nav a) {
+  font-family: var(--font-body-family);
+}
+
+
+/* Container */
+.container {
+  margin: auto;   /* center horizontally */
+}
+
+.page-container {
+  margin-top: 0px;  /* adjust vertical offset from top */
+}
+
+.page-container > section {
+  flex: 1; /* take remaining width */
+  margin-left: auto; /* ensures content doesn’t overlap navbar */
+  margin-right: auto;
+  display: flex;
+  justify-content: center; /* horizontally center content */
+}
+
+.page-container > section .container {
+  width: calc(100% - 20vw); /* full width minus navbar safe margins */
+  padding: 0 15vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;         /* fill the section height */
+}
+
+.page-container > section#landing .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: calc(100% - 20vw);  /* account for navbar */
+  min-height: 100vh;
+}
+
+/* Desktop Navbar */
+.desktop-navbar {
+  position: fixed;
+  top: var(--layout-side);
+  left: var(--layout-side);
+  z-index: 1000;
+  max-width: 20vw;
+
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.desktop-nav {
+  display: flex;
+}
+
+.desktop-nav li {
+  list-style: none;
+}
+
+.desktop-nav a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-weight: 600;
+  padding: 0.6em 0.6em;
+  transition: all 0.3s ease;
+  font-family: var(--font-header-family);
+  font-size: var(--font-body);
+}
+
+.highlight-name {
+color: var(--color-red); /* or any red you prefer */
+}
+
+.desktop-nav a:hover {
+  background-color: #292929;
+  transform: translateY(-2px);
+}
+
+.landing-btn img {
+  width: calc(var(--layout-side));
+  height: calc(var(--layout-side));
+  cursor: pointer;
+}
+
+
 
 /* Base Sections */
 section {
@@ -23,51 +136,109 @@ section {
   width: 100%;
   display: block;
   background-color: #121212;
-  padding-top: 100px;
+  position: relative;
+}
+
+.section{
+  position: relative;
+  overflow: hidden;
+}
+
+.section .container{
+  position: relative;
+  z-index: 2;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  font-size: var(--font-heading);
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+/* Subheader */
+.section-subheader {
+  text-align: center;
+  font-size: var(--font-subheading);
+  margin-bottom: 5px;
+  color: var(--color-red); /* or another accent color */
+}
+
+/* Two-layer wave colors */
+.top-wave-image {
+  display: block;
+  position: absolute;   /* stick to top of section */
+  top: 0;
+  left: 0;
+  width: 100%;          /* full width */
+  height: auto;         /* maintain aspect ratio */
+  z-index: 0;           /* above section content */
+  pointer-events: none; /* ignore clicks */
+  shape-rendering: geometricPrecision; /* improves curve smoothness */
+  image-rendering: optimizeQuality;    /* if it falls back to raster in some browsers */
+}
+
+.bottom-wave-image {
+  display: block;
+  position: absolute;   /* stick to top of section */
+  bottom: 0;
+  left: 0;
+  width: 100%;          /* full width */
+  height: auto;         /* maintain aspect ratio */
+  z-index: 0;           /* above section content */
+  pointer-events: none; /* ignore clicks */
+  shape-rendering: geometricPrecision; /* improves curve smoothness */
+  image-rendering: optimizeQuality;    /* if it falls back to raster in some browsers */
 }
 
 /* Alternating background colors */
 .section:nth-child(odd) {
-  background-color: #121212; /* dark grey, your GPT grey */
+  background-color: var(--color-background-main); /* dark grey, your GPT grey */
 }
 
 .section:nth-child(even) {
-  background-color: #1e1e1e; /* slightly lighter grey */
+  background-color: var(--color-background-alt); /* slightly lighter grey */
 }
 
 .page-container > section:nth-child(odd) {
-  background-color: #121212; /* About, Experience, etc. */
+  background-color: var(--color-background-main); /* About, Experience, etc. */
 }
 
 .page-container > section:nth-child(even) {
-  background-color: #1e1e1e; /* Work, etc. */
+  background-color: var(--color-background-alt); /* Work, etc. */
 }
 
-/* Container */
-.container {
-  width: 100%;
-  max-width: 1050px;
-  margin: auto;
+#headshot.clicked {
+  animation: clickPulse 0.25s ease-out;
 }
 
-.page-container {
-  margin-top: 100px;  /* adjust vertical offset from top */
-}
-/* Skills */
-.skills-list {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-  margin-top: 20px;
+@keyframes clickPulse {
+  0% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.04); filter: brightness(1.4); }
+  100% { transform: scale(1); filter: brightness(1); }
 }
 
-.skills-list li {
-  background-color: #1f1f1f;
-  padding: 8px 12px;
-  border-radius: 6px;
+.section.about {
+  position: relative;   /* container for absolute wave */
+  overflow: hidden;
+  min-height: 200vh;
 }
+
+.section.work {
+  position: relative;   /* container for absolute wave */
+  overflow: hidden;
+  padding-top: 160px;   /* adjust to match wave height */
+  padding-bottom: 160px; /* space for bottom wave */
+}
+
+.section.experience{
+  position: relative;   /* container for absolute wave */
+  overflow: hidden;
+  padding-top: 160px;   /* adjust to match wave height */
+  min-height: 200vh;
+}
+
 
 /* Cards */
 .cards-wrapper {
@@ -90,24 +261,6 @@ section {
 .card h3 {
   margin-bottom: 10px;
   color: #ffffff;
-}
-
-/* About Me*/
-#about {
-  position: relative;      /* required for absolute SVG inside */
-  padding-bottom: 800px;   /* same as .wavy height */
-}
-
-.section {
-  position: relative; /* needed for absolute positioning inside */
-}
-
-.section-divider.wavy {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 400px; /* adjust height as needed */
 }
 
 /* ======================
@@ -198,6 +351,10 @@ section {
 }
 
 @media (max-width: 768px) {
+  .desktop-navbar {
+    display:none
+  }
+
   .landing {
     flex-direction: column;
     align-items: center;
@@ -228,113 +385,67 @@ section {
 ====================== */
 @media (min-width: 769px) {
 
-  /* Desktop Navbar */
-  .desktop-navbar {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
+/* Hide mobile elements on desktop */
+.mobile-header,
+.mobile-overlay {
+  display: none;
+}
 
-  .desktop-nav {
-    display: flex;
-    gap: 15px;
-  }
+/* Landing Section */
+.landing {
+  justify-content: flex-start;
+  align-items: left;
+  height: 100vh;       /* full viewport height */
+  text-align: left;
+}
 
-  .desktop-nav li {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+.landing-flex {
+  display: flex;
+  flex-direction: row;      /* horizontal layout */
+  align-items: center;      /* vertical centering of text & image */
+  justify-content: space-between;
+  gap: 50px;
+}
 
-  .desktop-nav a {
-    text-decoration: none;
-    color: #e0e0e0;
-    font-weight: 600;
-    padding: 10px 14px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-  }
+/* Landing Text */
+.landing-text {
+width: 100%;
+display: flex;
+flex-direction: column;    /* name, divider, intro stacked */
+justify-content: flex-start;
+}
 
-  .highlight-name {
-  color: #ff3b3b; /* or any red you prefer */
-  }
+.landing-text h1 {
+font-size: 4rem;
+margin-bottom: 0px;
+}
 
-  .desktop-nav a:hover {
-    background-color: #292929;
-    transform: translateY(-2px);
-  }
+.landing-text h2 {
+font-size: 3rem;
+margin-bottom: 0px;
+margin-top: -10px;
+}
 
-  .landing-btn img {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-  }
+.landing-divider {
+width: 100%;
+border: 2px solid #e0e0e0;
+margin: 0px 0;     /* space above and below */
+}
 
-  /* Hide mobile elements on desktop */
-  .mobile-header,
-  .mobile-overlay {
-    display: none;
-  }
-
-  /* Landing Section */
-  .landing {
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: left;
-    padding-top: 50px; /* space for navbar */
-    height: 100vh;       /* full viewport height */
-    margin-top: 0;       /* remove mobile margin */
-    text-align: left;
-    padding-top: 200px;         /* space for navbar */
-  }
-
-  .landing-flex {
-    display: flex;
-    gap: 50px;
-    align-items: flex-start;
-  }
-
-  /* Landing Text */
-  .landing-text {
-    width: 600px;
-    display: flex;
-    flex-direction: column;    /* name, divider, intro stacked */
-    justify-content: flex-start;
-  }
-
-  .landing-text h1 {
-    font-size: 3.5rem;
-    margin-bottom: 0px;
-  }
-
-  .landing-text h2 {
-    font-size: 3rem;
-    margin-bottom: 0px;
-    margin-top: -10px;
-  }
-
-  .landing-divider {
-    width: 100%;
-    max-width: 600px;        /* short line */
-    border: 2px solid #e0e0e0;
-    margin: 0px 0;     /* space above and below */
-  }
-
-  .landing-text p {
-    font-size: 1rem;
-    line-height: 1.5;          /* nicer readability */
-    margin: 10px 0;   
-    color: #b0b0b0;
-  }
+.landing-text p {
+font-size: var(--font-body);
+line-height: 1.5;          /* nicer readability */
+margin: 10px 0;   
+color: #b0b0b0;
+}
 
   /* Landing Image */
- .landing-image {
-  width: 300px;   /* same width and height */
-  height: 300px;
+.landing-image {
+  position: relative;
+  z-index: 10;
+  width: 25vw;           /* 25% of viewport width */
+  max-width: 400px;      /* optional cap so it doesn’t get enormous on very wide screens */
+  aspect-ratio: 1 / 1;   /* ensures height matches width */
 }
 
 .landing-image img {
@@ -343,5 +454,132 @@ section {
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #e0e0e0;
+}
+
+#secret-wrapper {
+  position: absolute;
+  top: -140px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  color: #000;
+  padding: 20px 25px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4); /* bigger, softer shadow */
+  min-width: 160px;
+  text-align: center;
+  display: none;
+  z-index: 10000;
+  border: 3px solid #fff; /* ensures no grey border */
+}
+
+#secret-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 18px solid #fff;
+}
+
+#secret-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+
+/* About Section */
+/* Skills Grid */
+
+.skills-divider {
+  width: 100%;
+  border: 2px solid var(--color-red);
+  margin-bottom: 50px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3vw;
+  width: 100%;   /* fills the safe section width */
+  justify-items: stretch;
+}
+
+.skill-tile {
+  perspective: 1000px; /* required for 3D flip effect */
+  width: 100%;      /* fixed width matches the grid column */
+  aspect-ratio: 1.5 / 1; /* makes it a square */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: none; /* remove outer background */
+}
+
+/* Inner tile that flips */
+.skill-tile-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+
+
+.skill-tile:hover .skill-tile-inner{
+  
+  box-shadow: 0 0 25px rgba(255,59,59,0.6);
+}
+
+
+/* Flip on click */
+.skill-tile-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.skill-tile-front,
+.skill-tile-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  padding: 15px;
+  color: #e0e0e0;
+  background-color: #121212;
+}
+
+.skill-tile-back {
+  transform: rotateY(180deg);
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.skill-tile img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+   /* make image red */
+  filter: invert(22%) sepia(95%) saturate(6000%) hue-rotate(350deg) brightness(90%) contrast(90%);
+}
+
+.skill-tile p {
+  color: #e0e0e0;
+  font-weight: 600;
+  text-align: center;
 }
 }
