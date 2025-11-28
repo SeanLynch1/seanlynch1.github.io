@@ -17,7 +17,7 @@ headshot.addEventListener('click', () => {
 
   // Pulse feedback
   headshot.classList.add('clicked');
-  setTimeout(() => headshot.classList.remove('clicked'), 200);
+  setTimeout(() => headshot.classList.remove('clicked'), 100);
 
   if (clickCount === 5) {
 

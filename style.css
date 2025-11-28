@@ -2,9 +2,9 @@
    Reset & Base Styles
 ====================== */
 :root {
-  --layout-side: 2vw;
+  --layout-side: 1vw;
   --navbar-width: 180px; /* width of navbar column */
-  --font-heading: 6rem;      /* for main headings */
+  --font-heading: 5rem;      /* for main headings */
   --font-subheading: 3.5rem;   /* for subheadings */
   --font-body: 1.2rem;         /* for normal text */
 
@@ -33,6 +33,7 @@ html, body {
   color: #e0e0e0;
   scroll-behavior: smooth;
   line-height: 1.6;
+  font-size: 75%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -69,8 +70,6 @@ body, p, span, li, a:not(.desktop-nav a) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 100vh;         /* fill the section height */
 }
 
 .page-container > section#landing .container {
@@ -80,6 +79,13 @@ body, p, span, li, a:not(.desktop-nav a) {
   width: calc(100% - 20vw);  /* account for navbar */
   min-height: 100vh;
 }
+
+
+#about .container {
+  justify-content: flex-start;  /* allow inner flexbox to control spacing */
+  height: 100%;
+}
+
 
 /* Desktop Navbar */
 .desktop-navbar {
@@ -103,6 +109,7 @@ body, p, span, li, a:not(.desktop-nav a) {
 }
 
 .desktop-nav a {
+  white-space: nowrap;  /* prevents text from breaking into multiple lines */
   text-decoration: none;
   color: #e0e0e0;
   font-weight: 600;
@@ -122,12 +129,10 @@ color: var(--color-red); /* or any red you prefer */
 }
 
 .landing-btn img {
-  width: calc(var(--layout-side));
-  height: calc(var(--layout-side));
+  width: 2vw;
+  height: 2vw;
   cursor: pointer;
 }
-
-
 
 /* Base Sections */
 section {
@@ -161,6 +166,7 @@ section {
 .section-subheader {
   text-align: center;
   font-size: var(--font-subheading);
+  margin-top: 5px;
   margin-bottom: 5px;
   color: var(--color-red); /* or another accent color */
 }
@@ -210,7 +216,7 @@ section {
 }
 
 #headshot.clicked {
-  animation: clickPulse 0.25s ease-out;
+  animation: clickPulse 0.1s ease-out;
 }
 
 @keyframes clickPulse {
@@ -222,14 +228,24 @@ section {
 .section.about {
   position: relative;   /* container for absolute wave */
   overflow: hidden;
-  min-height: 200vh;
+  min-height: 100vh;
+  padding-top: 20vh; /* gives breathing room between waves and content */
+  padding-bottom: 30vh;
+}
+
+.about-inner {
+  display: flex;            /* REQUIRED */
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;             /* let it fill the container */
 }
 
 .section.work {
-  position: relative;   /* container for absolute wave */
+   position: relative;   /* container for absolute wave */
   overflow: hidden;
-  padding-top: 160px;   /* adjust to match wave height */
-  padding-bottom: 160px; /* space for bottom wave */
+  min-height: 100vh;
+  padding-top: 20vh; /* gives breathing room between waves and content */
+  padding-bottom: 30vh;
 }
 
 .section.experience{
@@ -380,6 +396,7 @@ section {
     font-size: 1.2rem;
   }
 }
+
 /* ======================
    Desktop Styles
 ====================== */
@@ -496,6 +513,8 @@ color: #b0b0b0;
 /* About Section */
 /* Skills Grid */
 
+
+
 .skills-divider {
   width: 100%;
   border: 2px solid var(--color-red);
@@ -508,6 +527,7 @@ color: #b0b0b0;
   gap: 3vw;
   width: 100%;   /* fills the safe section width */
   justify-items: stretch;
+  margin-bottom: 150px;
 }
 
 .skill-tile {
@@ -533,9 +553,7 @@ color: #b0b0b0;
 }
 
 
-
 .skill-tile:hover .skill-tile-inner{
-  
   box-shadow: 0 0 25px rgba(255,59,59,0.6);
 }
 
@@ -575,11 +593,281 @@ color: #b0b0b0;
   margin-bottom: 10px;
    /* make image red */
   filter: invert(22%) sepia(95%) saturate(6000%) hue-rotate(350deg) brightness(90%) contrast(90%);
+  user-select: none;
 }
 
 .skill-tile p {
   color: #e0e0e0;
   font-weight: 600;
   text-align: center;
+  user-select: none;
 }
+
+/* ======================
+   Education Timeline
+====================== */
+
+.timeline {
+  position: relative;
+  flex-grow: 1; /* make timeline fill the vertical space between top/bottom */
+}
+
+.education-divider {
+  width: 100%;
+  border: 2px solid var(--color-red);
+  margin-bottom: 50px;
+}
+
+/* Central vertical line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background-color: #e0e0e0;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Individual timeline item */
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+/* Alternating sides */
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+/* Dot */
+.timeline-dot {
+  position: absolute;
+  top: 0; /* aligns dot at the top of the line */
+  width: 30px;
+  height: 30px;
+  background-color: var(--color-red);
+  border-radius: 50%;
+  z-index: 3;
+}
+
+/* Align dot center on the line */
+.timeline-item.left .timeline-dot {
+  right: -15px; /* half of dot width to center over line */
+}
+
+.timeline-item.right .timeline-dot {
+  left: -15px;
+}
+
+/* Timeline content box */
+.timeline-content {
+  background-color: var(--color-background-alt);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  display: inline-block;
+  max-width: 100%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Course title and date inline with dot */
+/* Titles and Dates */
+.timeline-title {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 1.5rem;
+}
+
+.timeline-college {
+  display: block;
+  font-size: 1rem;
+  color: var(--color-muted);
+  margin-bottom: 0.2rem;
+}
+
+.timeline-date {
+  display: block;
+  font-size: 1rem;
+  color: var(--color-muted);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-date {
+  font-size: 1rem;
+  color: var(--color-muted);
+}
+
+/* Modules list below the title, alternating sides */
+.timeline-item.left .modules {
+  justify-content: flex-end; /* right-justify modules for left items */
+  text-align: right;
+}
+
+.timeline-item.right .modules {
+  justify-content: flex-start; /* left-justify modules for right items */
+  text-align: left;
+}
+
+/* Modules list below the title */
+.modules {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.module-tag {
+  background-color: var(--color-red);
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.timeline-item.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================
+      My Work
+==================*/
+
+.section.work .background-stripes {
+  position: absolute;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
+  object-fit: cover;
+}
+
+/* Work Grid */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-auto-rows: 1fr;                  /* rows same height as columns */
+  gap: 4vw;;                             /* space between tiles */
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Each work tile */
+.work-tile {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;                  /* make it square */
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Logos not in capsule */
+.tile-logo {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 1rem auto 0 auto;  /* top margin + horizontal center */
+}
+
+/* Capsule wrapper (only for Agri World) */
+.logo-capsule {
+  display: inline-block;
+  background-color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  margin: 1rem auto 0 auto;  /* match top margin of other logos */
+  text-align: center;
+}
+
+/* Logo inside capsule */
+.logo-capsule .tile-logo {
+  width: 250px;  /* same as others */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.work-tile h3 {
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: 2.4rem;                   /* bigger title */
+  font-weight: 700;
+  color: #ffffff;                    /* reddish tint */
+  text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+}
+
+.work-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255,59,59,0.5);
+}
+/* Background image stretched */
+.tile-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform 0.5s;
+}
+
+.work-tile:hover .tile-background {
+  transform: scale(1.05); /* subtle zoom on hover */
+}
+
+/* Clickable content container */
+.work-tile a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* stack content from top */
+  align-items: center;         /* horizontally center all content */
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  padding: 0.5rem;
+}
+
+
+.modules {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-top: 0.5rem;      /* space from title */
+  margin-bottom: 0.5rem;
+}
+
+
+/* Module tags */
+.module-tag {
+  background-color: var(--color-red);
+  color: #fff;
+  padding: 0.5rem 0.75rem; /* a bit more vertical and horizontal padding */
+  border-radius: 4px;
+  font-size: 1rem;         /* increase from 0.9rem */
+  text-decoration: none;
+}
+
 }
