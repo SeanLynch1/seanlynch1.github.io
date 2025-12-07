@@ -48,23 +48,38 @@
 
     <!-- Landing Section -->
     <section id="landing" class="section landing">
-      <div class="container landing-flex">
-        <div class="landing-text">
-          <h1>Hi, I'm <span class="highlight-name">Seán</span></h1>
-          <h2>A Software Developer.</h2>
-          <hr class="landing-divider">
-          <p>
-            I'm a Master's graduate in Data Science from Technological University Dublin. I have experience working as a Data Engineer at Bank of Ireland and as a Senior Consultant at Grant Thornton. I'm passionate about creating and building new exciting stuff.
-          </p>
-        </div>
+  <div class="container"> <!-- global container -->
+
+    <div class="landing-box"> <!-- new inner container for the box -->
+      <div class="landing-flex">
         <div class="landing-image">
-          <img id="headshot" src="images/headshot_coloured_background.png" alt="Sean Lynch Headshot">
-           <div id="secret-wrapper" style="display:none;">
-              <div id="secret-text">I love my wife ❤️</div>
-          </div>
+          <img id="headshot" src="images/headshot.png" alt="Sean Lynch Headshot">
         </div>
+
+        <div class="landing-text">
+          <h3>Hi, I'm <span class="highlight-name">Seán</span></h3>
+          <h4>A Software Developer.</h4>
+          <hr class="landing-divider">
+          <p>I'm a Master's graduate in Data Science from Technological University Dublin. Passionate about building new exciting stuff.</p>
+        </div>
+
+        
       </div>
-    </section>
+    </div>
+
+    <div class="landing-buttons-row">
+      <div class="landing-buttons">
+        <a href="#footer" class="btn-contact">Contact</a>
+        <a href="SeanLynchResume.pdf" download class="btn-resume">Resumé</a>
+      </div>
+    </div>
+
+    <div id="secret-wrapper">
+            <div id="secret-text">I love my wife ❤️</div>
+          </div>
+
+  </div>
+</section>
 
 <!-- About Section with wave -->
 <section id="about" class="section about">
@@ -87,7 +102,7 @@
             <div class="skill-tile-inner">
               <!-- Front side -->
               <div class="skill-tile-front">
-                <img src="images/git.png" alt="Git">
+                <img src="images/github.png" alt="Git">
                 <p>Git Version Control</p>
               </div>
               <!-- Back side -->
@@ -137,7 +152,7 @@
             <div class="skill-tile-inner">
               <div class="skill-tile-front">
                 <img src="images/apis.png" alt="APIs">
-                <p>Application Programming Interfaces</p>
+                <p>APIs</p>
               </div>
               <div class="skill-tile-back">
                 <p>
@@ -212,7 +227,8 @@
             <div class="timeline-item right">
               <div class="timeline-dot"></div>
               <div class="timeline-content">
-                <span class="timeline-title">MSc Computer Science (Data Science)</span>
+                <span class="timeline-title">MSc Computer Science</span>
+                <span class="timeline-title">(Data Science)</span>
                 <span class="timeline-college">Technological University Dublin</span>
                 <span class="timeline-date">Graduated: 2024</span>
                 <div class="modules-normal">
@@ -279,12 +295,12 @@
           <img src="images/brain_balls_logo.png" alt="Brain Balls Logo" class="tile-logo">
 
           <h3>Brain Balls</h3>
-          <div class="modules-inverted">
-            <span class="module-inverted-tag">Unity</span>
-            <span class="module-inverted-tag">C#</span>
-            <span class="module-inverted-tag">iOS</span>
-            <span class="module-inverted-tag">Advertisements</span>
-            <span class="module-inverted-tag">In-game purchases</span>
+          <div class="modules-normal">
+            <span class="module-normal-tag">Unity</span>
+            <span class="module-normal-tag">C#</span>
+            <span class="module-normal-tag">iOS</span>
+            <span class="module-normal-tag">Advertisements</span>
+            <span class="module-normal-tag">In-game purchases</span>
           </div>
         </a>
       </div>
@@ -296,18 +312,18 @@
           <img src="images/renting_made_easy_logo.svg" alt="Renting Made Easy Logo" class="tile-logo">
 
           <h3>Renting Made Easy</h3>
-          <div class="modules-inverted">
-            <span class="module-inverted-tag">Python</span>
-            <span class="module-inverted-tag">API/Webscraping</span>
-            <span class="module-inverted-tag">AWS Lambda</span>
-            <span class="module-inverted-tag">AWS EC2</span>
-            <span class="module-inverted-tag">SQL</span>
-            <span class="module-inverted-tag">Star Schema</span>
-            <span class="module-inverted-tag">KNN</span>
-            <span class="module-inverted-tag">Cosine Similarity</span>
-            <span class="module-inverted-tag">Z Score Standardisation</span>
-            <span class="module-inverted-tag">Google Maps API</span>
-            <span class="module-inverted-tag">Haversine Formula</span>
+          <div class="modules-normal">
+            <span class="module-normal-tag">Python</span>
+            <span class="module-normal-tag">API/Webscraping</span>
+            <span class="module-normal-tag">AWS Lambda</span>
+            <span class="module-normal-tag">AWS EC2</span>
+            <span class="module-normal-tag">SQL</span>
+            <span class="module-normal-tag">Star Schema</span>
+            <span class="module-normal-tag">KNN</span>
+            <span class="module-normal-tag">Cosine Similarity</span>
+            <span class="module-normal-tag">Z Score Standardisation</span>
+            <span class="module-normal-tag">Google Maps API</span>
+            <span class="module-normal-tag">Haversine Formula</span>
           </div>
         </a>
       </div>
@@ -318,11 +334,11 @@
           <a href="https://store.steampowered.com/app/3364220/Ventilate/" target="_blank">
           <img src="images/ventilate_logo_glow.png" alt="Ventilate Logo" class="tile-logo">
           <h3>Ventilate</h3>
-          <div class="modules-inverted">
-            <span class="module-inverted-tag">Steam</span>
-            <span class="module-inverted-tag">Unity</span>
-            <span class="module-inverted-tag">C#</span>
-            <span class="module-inverted-tag">AI</span>
+          <div class="modules-normal">
+            <span class="module-normal-tag">Steam</span>
+            <span class="module-normal-tag">Unity</span>
+            <span class="module-normal-tag">C#</span>
+            <span class="module-normal-tag">AI</span>
           </div>
         </a>
       </div>
@@ -335,11 +351,11 @@
                   <img src="images/Agri-Aware-Logo.svg" alt="Ventilate Logo" class="tile-logo">
               </span>
               <h3>Agri World</h3>
-              <div class="modules-inverted">
-                  <span class="module-inverted-tag">C#</span>
-                  <span class="module-inverted-tag">Unity</span>
-                  <span class="module-inverted-tag">Sound Design</span>
-                  <span class="module-inverted-tag">Level Design</span>
+              <div class="modules-normal">
+                  <span class="module-normal-tag">C#</span>
+                  <span class="module-normal-tag">Unity</span>
+                  <span class="module-normal-tag">Sound Design</span>
+                  <span class="module-normal-tag">Level Design</span>
               </div>
           </a>
       </div>
@@ -354,8 +370,6 @@
     <div class="container">
         <h2 class="section-header">Experience</h2>
 
-
-        
         <!-- EXPERIENCE CARD 3 -->
         <div class="exp-card">
             <div class="exp-header">
@@ -363,32 +377,71 @@
 
                 <p class="exp-company-date">
                     Grant Thornton
+                    <span class="exp-separator">|</span>
                     <span class="exp-date">Jul 2025 - Present</span>
                 </p>
             </div>
 
-            <div class="exp-body">
-                <div class="exp-desc">
-                    <p>
-                        Delivering data solutions using SQL, Python, and Power BI. Focused
-                        on analytics, reporting, and engineering pipelines for major
-                        enterprise clients.
-                    </p>
-                </div>
+<div class="exp-body">
+    <div class="exp-description">
+        <h4>Overview</h4>
+        <p>
+            Delivering data solutions using Excel, Python, Power BI, and Alteryx. Focused on analytics,
+            reporting, automation, and engineering pipelines for enterprise clients, with experience
+            across healthcare, financial services, and internal projects.
+        </p>
 
-                <ul class="exp-bullets">
-                    <li>Data modelling</li>
-                    <li>Power BI dashboards</li>
-                    <li>Python automation</li>
-                    <li>Client-facing engineering</li>
-                </ul>
-            </div>
+        <h4>Reinsurance & Accelerant</h4>
+        <p>
+            Worked with Accelerant, a reinsurance intermediary, primarily using Excel to manage the accounting ledger,
+            calculate credits and losses, and refine reporting processes. Gained brief exposure to Alteryx while
+            supporting reinsurance workflows and improving overall efficiency.
+        </p>
 
-            <div class="exp-tags">
-                <span>SQL</span>
-                <span>Python</span>
-                <span>Power BI</span>
-                <span>Data Engineering</span>
+        <h4>HSE Dashboard Development</h4>
+        <p>
+            Developed a live Power BI dashboard reporting on emergency department discharges, attendances,
+            and admissions at University Hospital Kerry. This replaced a manual two-hour process of extracting data
+            from IPMS, pivoting it in Excel, and distributing reports. The dashboard, connected via Power BI Gateway,
+            refreshes every 30 minutes, with all columns and measures optimized in M and DAX code.
+        </p>
+
+        <h4>Internal Projects & Presentations</h4>
+        <p>
+            Worked on internal projects to improve presentation and communication skills. Delivered presentations
+            to Uisce Éireann on topics including nominal vs. ordinal data, ratio and interval data, causation vs.
+            correlation, data visualisation, and storyboarding. Conducted practical Excel demos for effective
+            data storytelling.
+        </p>
+
+        <h4>SharePoint Migration</h4>
+        <p>
+            Led a SharePoint migration project, transferring four years of data from on-premise drives to SharePoint.
+            Addressed long file paths by renaming files via Python and highlighting differences using Excel color coding,
+            ensuring a smooth migration.
+        </p>
+
+        <h4>Data Cleaning – Sunflower Bank</h4>
+        <p>
+            Analysed and cleaned financial datasets using Pandas and Excel, improving data quality
+            for accurate reporting and analytics.
+        </p>
+    </div>
+
+    <ul class="exp-bullets">
+        <li>Excel modelling & ledger analysis</li>
+        <li>Power BI dashboards & automation</li>
+        <li>Python & Alteryx data processing</li>
+        <li>Data migration & cleaning</li>
+    </ul>
+</div>
+
+
+            <div class="modules-normal">
+                <span class="module-normal-tag">SQL</span>
+                <span class="module-normal-tag">Python</span>
+                <span class="module-normal-tag">Power BI</span>
+                <span class="module-normal-tag">Data Engineering</span>
             </div>
         </div>
 
@@ -399,33 +452,55 @@
 
                 <p class="exp-company-date">
                     Bank of Ireland
+                    <span class="exp-separator">|</span>
                     <span class="exp-date">Sep 2024 - Jul 2025</span>
                 </p>
             </div>
 
             <div class="exp-body">
-                <div class="exp-desc">
-                    <p>
-                        Worked with Python, SQL, and Apache PySpark to process and manage
-                        large datasets. Developed Python packages and contributed to
-                        automation and data engineering solutions.
-                    </p>
-                </div>
 
-                <ul class="exp-bullets">
-                    <li>PySpark data processing</li>
-                    <li>Python package development</li>
-                    <li>ETL pipeline automation</li>
-                    <li>Big data optimisation</li>
-                </ul>
-            </div>
+    <div class="exp-description">
+        <h4>Overview</h4>
+        <p>
+            During my time at Bank of Ireland, I worked extensively with Python, SQL, and Apache PySpark to process and manage large datasets. I also gained hands-on experience with Unix, transferring and organizing files, and using Git for version control through Bitbucket. Each task had its own branch linked to Jira tickets, and all code changes went through peer-reviewed pull requests before being merged into the main branch. Daily stand-ups and ongoing communication were integral to the workflow, ensuring collaboration across teams.
+        </p>
 
-            <div class="exp-tags">
-                <span>Python</span>
-                <span>PySpark</span>
-                <span>SQL</span>
-                <span>AWS</span>
-                <span>ETL</span>
+        <h4>Project 1: Data Migration</h4>
+        <p>
+            I was involved in a data migration project, moving anti-human-trafficking data from Bank of Ireland’s data warehouse into their data lake. I wrote SQL to extract the data in partitions into staging files, and additional SQL to ingest it into the data lake. These workflows were orchestrated using Oozie within HUE, a graphical interface for Unix tasks. To validate the migration, I used PySpark to check that counts and data integrity matched during UAT.
+        </p>
+
+        <h4>Project 2: Mortgage Data API</h4>
+        <p>
+            The second project focused on mortgage data. I worked with APIs built on Flask, which needed to be refactored to FastAPI to comply with new data format requirements using Pydantic. The API I built received customer data and flagged potential loan defaults, which was then sent to another team for analysis.
+        </p>
+
+        <h4>Project 3: External Mortgage Data Reporting</h4>
+        <p>
+            For the third project, I built an API from scratch to send mortgage data to external entities, including CRIF, a global credit bureau, and nCino, a U.S.-based cloud banking platform used by Irish banks. Additionally, the data needed to be reported to the Central Bank of Ireland to ensure regulatory compliance. I wrote the code using Pydantic to match the schema for PUT requests as specified by CRIF and nCino documentation. This project was highly object-oriented and structured as a Python package, with multiple functions handling different use cases, such as student loans or other types of mortgages. I also conducted extensive user acceptance testing with many test cases, and the project was successfully delivered.
+        </p>
+
+        <h4>Workflow & Collaboration</h4>
+        <p>
+            Throughout all these projects, version control, peer reviews, Jira ticket management, and daily stand-ups were part of the routine. I actively contributed to all phases of development, testing, and delivery, ensuring smooth coordination with team members and successful project outcomes.
+        </p>
+    </div>
+
+    <ul class="exp-bullets">
+        <li>Apache PySpark data processing</li>
+        <li>Python package development</li>
+        <li>ETL pipeline automation</li>
+        <li>Big data optimisation</li>
+    </ul>
+
+</div>
+            <div class="modules-normal">
+                <span class="module-normal-tag">Python</span>
+                <span class="module-normal-tag">PySpark</span>
+                <span class="module-normal-tag">SQL</span>
+                <span class="module-normal-tag">Unix</span>
+                <span class="module-normal-tag">Data Lake</span>
+                <span class="module-normal-tag">FAST Api</span>
             </div>
         </div>
 
@@ -438,30 +513,53 @@
 
                 <p class="exp-company-date">
                     FDM Group
+                    <span class="exp-separator">|</span>
                     <span class="exp-date">May 2024 - Sep 2024</span>
                 </p>
             </div>
 
             <div class="exp-body">
-                <div class="exp-desc">
-                    <p>
-                        Completed a graduate programme in data engineering, gaining
-                        foundational experience in Python, SQL, and big data technologies.
-                    </p>
-                </div>
+    <div class="exp-description">
+        <h4>Overview</h4>
+        <p>
+            Participated in the FDM Group Graduate Programme, completing intensive training in Excel, SQL, Python, PySpark, and Power BI. Focused on analytics, programming, data engineering, and visualization skills through hands-on projects and graded assessments.
+        </p>
 
-                <ul class="exp-bullets">
-                    <li>Python fundamentals</li>
-                    <li>SQL development</li>
-                    <li>Big data introduction</li>
-                    <li>Professional training</li>
-                </ul>
-            </div>
+        <h4>Excel & SQL Training</h4>
+        <p>
+            Began with Excel training, followed by six weeks of SQL. Covered advanced concepts including aggregations, groupings, correlated subqueries, and joins (inner, outer, left, right, and handling null values). Developed strong query-writing skills for complex datasets.
+        </p>
 
-            <div class="exp-tags">
-                <span>Python</span>
-                <span>SQL</span>
-                <span>Data Engineering</span>
+        <h4>Python Programming</h4>
+        <p>
+            Completed beginner and advanced Python courses, including object-oriented programming, variables, functions, special double-underscore variables, and modular programming. Learned to write scripts calling other scripts, create unit tests and test cases, and understand loops, recursion, stacks, dictionaries, lists, linked lists, and binary trees. Assessments required a 70% pass mark.
+        </p>
+
+        <h4>PySpark & Unix</h4>
+        <p>
+            Worked with PySpark and Unix, building a Python question-answer system and analysing financial and capital data using datasets from Our World in Data. Performed data cleansing, transformation, predictive analysis, and visualization. Presented projects to the cohort, with formal grading for performance.
+        </p>
+
+        <h4>Power BI</h4>
+        <p>
+            Developed skills in Power BI, including semantic models, data modelling, DAX queries, and creating measures. Produced dashboards and visualizations to support insights and reporting across projects.
+        </p>
+    </div>
+
+    <ul class="exp-bullets">
+        <li>Advanced SQL queries & data aggregation</li>
+        <li>Python programming & OOP</li>
+        <li>PySpark, data transformation & predictive analysis</li>
+        <li>Power BI dashboards & data modelling</li>
+    </ul>
+</div>
+
+            <div class="modules-normal">
+                <span class="module-normal-tag"> Python</span>
+                <span class="module-normal-tag">SQL</span>
+                <span class="module-normal-tag">Excel</span>
+                <span class="module-normal-tag">Power BI</span>
+                <span class="module-normal-tag">Apache Pyspark</span>
             </div>
         </div>
 
@@ -470,7 +568,7 @@
     <img src="images/layered-waves-bottom2.svg" alt="Bottom wave" class="bottom-wave-image">
 </section>
 
-<footer class="site-footer">
+<footer id = "footer" class="site-footer">
   <div class="footer-icons">
     <a href="https://www.linkedin.com/in/seanchrislynch/" 
        class="footer-icon" 
@@ -488,11 +586,15 @@
       <span class="tooltip">GitHub Page</span>
     </a>
   </div>
-
   <p class="footer-tech">Built with HTML, CSS, and JavaScript</p>
   <p class="footer-name">&#169; Sean Lynch</p>
-  <p class="footer-email">seanchrislynch@gmail.com</p>
-  <p class="footer-phone">+353 85 826 578</p>
+  <p class="footer-contact">Contact me at: </p>
+  <p class="footer-email">
+    <a href="mailto:seanchrislynch@gmail.com">seanchrislynch@gmail.com</a>
+  </p>
+  <p class="footer-phone">+353 85 826 5478</p>
+  
+  
 </footer>
 
 
