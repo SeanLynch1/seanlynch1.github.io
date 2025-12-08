@@ -7,8 +7,10 @@
   --font-heading: clamp(2.5rem, 3vw + 1rem, 5rem);;      /* for main headings */
   --font-subheading: clamp(.8rem, 1.5vw + 0.8rem, 3.5rem);   /* for subheadings */
   --font-boxheading: clamp(.5rem, 1vw + 0.6rem, 3.5rem);
-  --font-body: clamp(1rem, 1vw + 0.15rem, 2rem);  /* for normal text */
+  --font-body: clamp(.5rem, 1vw + 0.15rem, 2rem);  /* for normal text */
   --font-nav: clamp(0.5rem, 1vw + 0.125rem, 2rem);
+  --font-mobile:clamp(.5rem, 1vw + .75rem, 2rem);
+  --font-mobile-body:clamp(.5rem, 1vw + .5rem, 2rem);
   --font-weight: 700;
 
   /* Fonts */
@@ -282,8 +284,100 @@ section {
   min-height: 100vh;
 }
 
-/* Experience Section */
+/* About Section */
+/* Skills Grid */
 
+.skills-wrapper{
+  margin-left: 2vh;
+  margin-right: 2vh;
+}
+.skills-divider {
+  width: 50%;
+  border: 1px solid var( --color-text);
+  margin: 0 auto 40px; /* auto left & right centers it */
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3vw;
+  width: 100%;   /* fills the safe section width */
+  justify-items: stretch;
+  margin-bottom: 50px;
+}
+
+.skill-tile {
+  perspective: 1000px; /* required for 3D flip effect */
+  width: 100%;      /* fixed width matches the grid column */
+  aspect-ratio: 1.5 / 1; /* makes it a square */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: none; /* remove outer background */
+}
+
+/* Inner tile that flips */
+.skill-tile-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.skill-tile:hover .skill-tile-inner{
+  box-shadow: 0 0 25px rgba(255,59,59,0.6);
+}
+
+/* Flip on click */
+.skill-tile-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.skill-tile-front,
+.skill-tile-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  padding: 15px;
+  color: #e0e0e0;
+  background-color: #121212;
+}
+
+.skill-tile-back {
+  transform: rotateY(180deg);
+  font-size: var(--font-body);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.skill-tile img {
+  width: clamp(20px, 3.5vw, 80px);   /* min 40px, grows with viewport, max 80px */
+  height: clamp(20px, 3.5vw, 80px);  /* keep height proportional */
+  margin-bottom: clamp(8px, 1vw, 15px); /* optional: scale margin too */
+  filter: invert(22%) sepia(95%) saturate(6000%) hue-rotate(350deg) brightness(100%) contrast(90%);
+  user-select: none;
+}
+
+.skill-tile p {
+  color: #e0e0e0;
+  font-weight: var(--font-weight);
+  font-size: var(--font-body);
+  text-align: center;
+  user-select: none;
+}
+
+/* Experience Section */
 #experience .section-header {
   margin-bottom: -2vh;
 }
@@ -601,6 +695,43 @@ section {
   z-index: 10;
 }
 
+#secret-wrapper {
+  position: absolute;
+  left: 70%;
+  transform: translateX(-70%);
+  background: #fff;
+  color: #000;
+  padding: 20px 25px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4); /* bigger, softer shadow */
+  min-width: 160px;
+  text-align: center;
+  display: none;
+  z-index: 1000333333330;
+  overflow: visible;  
+  border: 3px solid #fff; /* ensures no grey border */
+}
+
+#secret-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 18px solid #fff;
+  overflow: visible;  
+}
+
+#secret-text {
+  font-size: var(--font-body);
+  font-weight: var(--font-weight);
+}
+
 @media (max-width: 768px) {
   .desktop-navbar {
     display:none
@@ -616,32 +747,32 @@ section {
     align-items: center;
     text-align: center;
     height: auto;        /* let it expand naturally */
-    padding: 8rem 1rem;  /* breathing room */
+    padding: 10rem 1rem;  /* breathing room */
   }
 
   /* Landing Image as circle */
   .landing-image img {
-    width: 150px;           /* adjust as needed */
-    height: 150px;
+    width: clamp(120px, 35vw, 180px);   /* Scales with screen, but stays reasonable */
+    height: clamp(120px, 35vw, 180px);  /* Keep it a perfect circle */
     border-radius: 50%;     /* makes it circular */
     background: linear-gradient(to top, #ff0000, transparent); /* red to transparent, bottom-up */
-    border: 4px solid #ffffff; /* white border */
+    border: 2px solid #ffffff; /* white border */
     object-fit: cover;
     margin-bottom: 1rem;
   }
 
   .landing-text {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 1rem;             /* space between heading, divider, and text */
+    align-items: center;   /* keeps the title centered */
   }
 
   /* Name / main heading */
   .landing-text h3 {
     font-size: var(--font-heading);
-    margin-bottom: 0;
+    margin-bottom: -1vh;
+    text-align: center;
   }
 
   .landing-text h4 {
@@ -650,19 +781,182 @@ section {
 
   /* Subdivider spanning width */
   .landing-divider {
-    width: 90%;            /* almost full width */
+    width: 100%;            /* almost full width */
     border: 1px solid #e0e0e0;
     margin: 0 auto;
   }
 
   /* Subheading / intro text */
   .landing-text p {
-    font-size: var(--font-body);
+    font-size: var(--font-mobile);
     color: var(--color-muted);
     line-height: 1.5;
-    margin: 0 1rem;
+    text-align: justify;      
+    text-align-last: left;
+  }
+
+  .landing-buttons-row {
+    display: flex;
+    justify-content: center;   /* center the whole button row */
+    width: 100%;
+    margin-top: 1rem;
+    margin-left: 0rem;   
+  }
+
+  .landing-buttons {
+    display: flex;
+    justify-content: center;   /* center the buttons inside */
+    gap: 2rem;
+    width: 100%;               /* stretch the full container */
+  }
+
+  .landing-buttons a {
+    font-size:  var(--font-mobile);
+    padding: 1rem 1.2rem;   /* tighter mobile-friendly spacing */
+    width: 100%;            /* stretch full width if desired */
+    text-align: center;
+  } 
+
+  .landing-box-parent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  /* Shared width for text, divider, and buttons */
+  .landing-mobile-column {
+    width: 100%;
+  }
+
+  /* Make divider match exactly */
+  .landing-divider {
+    width: 100%;
+  }
+
+  #secret-wrapper {
+  position: absolute;
+  top: -10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  color: #000;
+  padding: 20px 25px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4); /* bigger, softer shadow */
+  min-width: 160px;
+  text-align: center;
+  display: none;
+  z-index: 1000333333330;
+  overflow: visible;  
+  border: 3px solid #fff; /* ensures no grey border */
+}
+
+  #secret-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 18px solid #fff;
+    overflow: visible;  
+  }
+
+  .skills-divider {
+    width: 50%;
+    border: 1px solid var( --color-text);
+    margin: 0 auto 40px; /* auto left & right centers it */
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3vw;
+    width: 100%;   /* fills the safe section width */
+    justify-items: stretch;
+    margin-bottom: 50px;
+  }
+
+  .skill-tile {
+    perspective: 1000px; /* required for 3D flip effect */
+    width: 100%;      /* fixed width matches the grid column */
+    aspect-ratio: 1.5 / 1; /* makes it a square */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: none; /* remove outer background */
+  }
+
+  /* Inner tile that flips */
+  .skill-tile-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+
+  .skill-tile:hover .skill-tile-inner{
+    box-shadow: 0 0 25px rgba(255,59,59,0.6);
+  }
+
+  /* Flip on click */
+  .skill-tile-inner.flipped {
+    transform: rotateY(180deg);
+  }
+
+  .skill-tile-front,
+  .skill-tile-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding: 15px;
+    color: #e0e0e0;
+    background-color: #121212;
+  }
+
+  .skill-tile-back {
+    transform: rotateY(180deg);
+    font-size: var(--font-body);
+    font-weight: 100;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .skill-tile-back p{
+    font-weight: 200;
+  }
+
+  .skill-tile img {
+    width: clamp(20px, 3.5vw, 80px);   /* min 40px, grows with viewport, max 80px */
+    height: clamp(20px, 3.5vw, 80px);  /* keep height proportional */
+    margin-bottom: clamp(8px, 1vw, 15px); /* optional: scale margin too */
+    filter: invert(22%) sepia(95%) saturate(6000%) hue-rotate(350deg) brightness(100%) contrast(90%);
+    user-select: none;
+  }
+
+  .skill-tile p {
+    color: #e0e0e0;
+    font-size: var(--font-mobile-body);
+    text-align: center;
+    user-select: none;
   }
 }
+
 
 /* ======================
    Desktop Styles
@@ -682,8 +976,8 @@ section {
   padding-top: 10rem;
   padding-left: 1rem;
   border-radius: 30px;
-  overflow: hidden;   
- 
+  overflow: hidden;
+
   backdrop-filter: blur(10px);    /* optional glass effect */
 
   display: flex;
@@ -720,7 +1014,6 @@ section {
   width: 100%;
   height: auto;
   object-fit: cover;
-  display: block;
 }
 /* Landing Text */
 .landing-text {
@@ -758,134 +1051,9 @@ section {
   color: #b0b0b0;
 }
 
-#secret-wrapper {
-  position: absolute;
-  top: -40px;
-  left: 77%;
-  transform: translateX(-77%);
-  background: #fff;
-  color: #000;
-  padding: 20px 25px;
-  border-radius: 20px;
-  font-weight: bold;
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4); /* bigger, softer shadow */
-  min-width: 160px;
-  text-align: center;
-  display: none;
-  z-index: 10000;
-  border: 3px solid #fff; /* ensures no grey border */
-}
-
-#secret-wrapper::after {
-  content: "";
-  position: absolute;
-  bottom: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-top: 18px solid #fff;
-}
-
-#secret-text {
-  font-size: var(--font-body);
-  font-weight: var(--font-weight);
-}
-
-/* Row 2: buttons below */
 
 
 
-/* About Section */
-/* Skills Grid */
-
-.skills-divider {
-  width: 50%;
-  border: 1px solid var( --color-text);
-  margin: 0 auto 40px; /* auto left & right centers it */
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3vw;
-  width: 100%;   /* fills the safe section width */
-  justify-items: stretch;
-  margin-bottom: 50px;
-}
-
-.skill-tile {
-  perspective: 1000px; /* required for 3D flip effect */
-  width: 100%;      /* fixed width matches the grid column */
-  aspect-ratio: 1.5 / 1; /* makes it a square */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  background: none; /* remove outer background */
-}
-
-/* Inner tile that flips */
-.skill-tile-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  cursor: pointer;
-}
-
-.skill-tile:hover .skill-tile-inner{
-  box-shadow: 0 0 25px rgba(255,59,59,0.6);
-}
-
-/* Flip on click */
-.skill-tile-inner.flipped {
-  transform: rotateY(180deg);
-}
-
-.skill-tile-front,
-.skill-tile-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  padding: 15px;
-  color: #e0e0e0;
-  background-color: #121212;
-}
-
-.skill-tile-back {
-  transform: rotateY(180deg);
-  font-size: var(--font-body);
-  text-align: center;
-  line-height: 1.4;
-}
-
-.skill-tile img {
-  width: clamp(20px, 3.5vw, 80px);   /* min 40px, grows with viewport, max 80px */
-  height: clamp(20px, 3.5vw, 80px);  /* keep height proportional */
-  margin-bottom: clamp(8px, 1vw, 15px); /* optional: scale margin too */
-  filter: invert(22%) sepia(95%) saturate(6000%) hue-rotate(350deg) brightness(100%) contrast(90%);
-  user-select: none;
-}
-
-.skill-tile p {
-  color: #e0e0e0;
-  font-weight: var(--font-weight);
-  font-size: var(--font-body);
-  text-align: center;
-  user-select: none;
-}
 
 /* ======================
    Education Timeline
