@@ -7,10 +7,11 @@
   --font-heading: clamp(2.5rem, 3vw + 1rem, 5rem);;      /* for main headings */
   --font-subheading: clamp(.8rem, 1.5vw + 0.8rem, 3.5rem);   /* for subheadings */
   --font-boxheading: clamp(.4rem, 1.25vw + 0.8rem, 3.5rem);
-  --font-body: clamp(.5rem, 1vw + 0.15rem, 2rem);  /* for normal text */
-  --font-nav: clamp(0.5rem, 1vw + 0.125rem, 2rem);
-  --font-mobile:clamp(.5rem, 1vw + .75rem, 2rem);
-  --font-mobile-body:clamp(.5rem, 1vw + .5rem, 2rem);
+  --font-body: clamp(0.2rem, 1vw + 0.1rem, 1.6rem);  /* for normal text */
+  --font-nav: clamp(0.2rem, .9vw + 0.1rem, 1.6rem);
+  --font-mobile:clamp(.5rem, 1vw + .55rem, 2rem);
+  --font-mobile-about:clamp(.5rem, 1vw + .5rem, 2rem);
+  --font-moblie-boxheading: clamp(.2rem, 1vw + 0.8rem, 3.5rem);
   --font-weight: 700;
 
   /* Fonts */
@@ -82,53 +83,6 @@ body, p, span, li, a:not(.desktop-nav a) {
   height: 100%;
 }
 
-/* Desktop Navbar */
-.desktop-navbar {
-  position: fixed;
-  top: var(--layout-side);
-  left: var(--layout-side);
-  z-index: 1000;
-  max-width: 20vw;
-
-  display: flex;
-  align-items: center;
-  gap: .75em;
-  font-weight: var(--font-weight);
-}
-
-.desktop-nav {
-  display: flex;
-}
-
-.desktop-nav li {
-  list-style: none;
-}
-
-.desktop-nav a {
-  white-space: nowrap;  /* prevents text from breaking into multiple lines */
-  text-decoration: none;
-  color: #e0e0e0;
-  padding: 0.6em 0.6em;
-  transition: all 0.3s ease;
-  font-family: var(--font-header-family);
-  font-size: var(--font-nav);
-}
-
-.highlight-name {
-color: var(--color-red); /* or any red you prefer */
-}
-
-.desktop-nav a:hover {
-  background-color: #292929;
-  transform: translateY(-2px);
-}
-
-.landing-btn img {
-  width: 2vw;
-  height: 2vw;
-  cursor: pointer;
-}
-
 /* Base Sections */
 section {
   height: 100%;
@@ -153,6 +107,7 @@ section {
 .section-header {
   text-align: center;
   font-size: var(--font-heading);
+  color: var(--color-text);
   margin-bottom: 4vh;
 }
 
@@ -160,8 +115,30 @@ section {
 .section-subheader {
   text-align: center;
   font-size: var(--font-subheading);
+  color: var(--color-text);
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.section.about {
+  position: relative;   /* container for absolute wave */
+  overflow: hidden;
+  min-height: 60vh;
+  padding-top: 20vh; /* gives breathing room between waves and content */
+  padding-bottom: 30vh;
+}
+
+.about-inner {
+  display: flex;            /* REQUIRED */
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;             /* let it fill the container */
+}
+
+.section.work {
+  position: relative;   /* container for absolute wave */
+  overflow: hidden;
+  min-height: 100vh;
 }
 
 /* Two-layer wave colors */
@@ -218,6 +195,55 @@ section {
   100% { transform: scale(1); filter: brightness(1); }
 }
 
+/* Desktop Navbar */
+.desktop-navbar {
+  position: fixed;
+  top: var(--layout-side);
+  left: var(--layout-side);
+  z-index: 1000;
+  max-width: 20vw;
+
+  display: flex;
+  align-items: center;
+  gap: .75em;
+  font-weight: var(--font-weight);
+}
+
+.desktop-nav {
+  display: flex;
+}
+
+.desktop-nav li {
+  list-style: none;
+}
+
+.desktop-nav a {
+  white-space: nowrap;  /* prevents text from breaking into multiple lines */
+  text-decoration: none;
+  color: #e0e0e0;
+  padding: 0.6em 0.6em;
+  transition: all 0.3s ease;
+  font-family: var(--font-header-family);
+  font-size: var(--font-nav);
+}
+
+.highlight-name {
+color: var(--color-red); /* or any red you prefer */
+}
+
+.desktop-nav a:hover {
+  background-color: #292929;
+  transform: translateY(-2px);
+}
+
+.landing-btn img {
+  width: 2vw;
+  height: 2vw;
+  cursor: pointer;
+}
+
+
+
 .landing-buttons-row {
   display: flex;
   justify-content: flex-start; 
@@ -263,28 +289,8 @@ section {
   box-shadow: 0 15px 25px rgba(252, 14, 14, 0.1);
 }
 
-.section.about {
-  position: relative;   /* container for absolute wave */
-  overflow: hidden;
-  min-height: 80vh;
-  padding-top: 20vh; /* gives breathing room between waves and content */
-  padding-bottom: 30vh;
-}
 
-.about-inner {
-  display: flex;            /* REQUIRED */
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;             /* let it fill the container */
-}
 
-.section.work {
-  position: relative;   /* container for absolute wave */
-  overflow: hidden;
-  min-height: 100vh;
-}
-
-/* About Section */
 /* Skills Grid */
 
 .skills-wrapper{
@@ -733,27 +739,43 @@ section {
 }
 
 @media (max-width: 768px) {
-  .desktop-navbar {
+  .desktop-navbar,
+  .timeline,
+  .skills-grid{
     display:none
+  }
+  
+  .page-container > section .container {
+    width: 100%;
+    padding: 0 0;
   }
 
   .page-container > section .container {
-    width: 100%;
-    padding: 0 1rem; /* optional horizontal padding for breathing room */
+    width: calc(100% - 10vw); /* full width minus navbar safe margins */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-   .landing {
+  .section-header {
+    text-align: center;
+    font-size: var(--font-heading);
+    margin-bottom: 2vh;
+  }
+
+  .landing {
+    margin-top: 20vw;
+    margin-bottom: -12vw;
     flex-direction: column;
     align-items: center;
     text-align: center;
     height: auto;        /* let it expand naturally */
-    padding: 10rem 1rem;  /* breathing room */
   }
 
   /* Landing Image as circle */
   .landing-image img {
-    width: clamp(120px, 35vw, 120px);   /* Scales with screen, but stays reasonable */
-    height: clamp(120px, 35vw, 120px);  /* Keep it a perfect circle */
+    width: clamp(30vh, 35vw, 40vh);   /* Scales with screen, but stays reasonable */
+    height: clamp(30vh, 35vw, 40vh);   /* Keep it a perfect circle */
     border-radius: 50%;     /* makes it circular */
     background: linear-gradient(to top, #ff0000, transparent); /* red to transparent, bottom-up */
     border: 2px solid #ffffff; /* white border */
@@ -771,7 +793,6 @@ section {
   /* Name / main heading */
   .landing-text h3 {
     font-size: var(--font-heading);
-    margin-bottom: -1vh;
     text-align: center;
   }
 
@@ -852,109 +873,146 @@ section {
   border: 3px solid #fff; /* ensures no grey border */
 }
 
-  #secret-wrapper::after {
-    content: "";
-    position: absolute;
-    bottom: -18px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 18px solid #fff;
-    overflow: visible;  
-  }
+#secret-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 18px solid #fff;
+  overflow: visible;  
+}
 
-  .skills-divider {
-    width: 50%;
-    border: 1px solid var( --color-text);
-    margin: 0 auto 40px; /* auto left & right centers it */
-  }
+#secret-text {
+  font-size: var(--font-mobile);
+  font-weight: var(--font-weight);
+}
 
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3vw;
-    width: 100%;   /* fills the safe section width */
-    justify-items: stretch;
-    margin-bottom: 50px;
-  }
+/* ==================
+        SKILLS
+===================*/
 
-  .skill-tile {
-    perspective: 1000px; /* required for 3D flip effect */
-    width: 100%;      /* fixed width matches the grid column */
-    aspect-ratio: 1.5 / 1; /* makes it a square */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    background: none; /* remove outer background */
-  }
+.section.about {
+  position: relative;   /* container for absolute wave */
+  overflow: hidden;
+  min-height: 60vh;
+  padding-top: 8vh; /* gives breathing room between waves and content */
+}
 
-  /* Inner tile that flips */
-  .skill-tile-inner {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    cursor: pointer;
-  }
+.about-inner {
+  display: flex;            /* REQUIRED */
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;             /* let it fill the container */
+  max-width: 95vw;
+}
 
-  .skill-tile:hover .skill-tile-inner{
-    box-shadow: 0 0 25px rgba(255,59,59,0.6);
-  }
+.skills-divider {
+  width: 100%;
+  border: 1px solid var( --color-text);
+  margin: 0 auto 10px; /* auto left & right centers it */
+}
 
-  /* Flip on click */
-  .skill-tile-inner.flipped {
-    transform: rotateY(180deg);
-  }
+.skills-mobile{
+  margin-bottom: 20px;
+}
 
-  .skill-tile-front,
-  .skill-tile-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    padding: 15px;
-    color: #e0e0e0;
-    background-color: #121212;
-  }
 
-  .skill-tile-back {
-    transform: rotateY(180deg);
-    font-size: var(--font-body);
-    font-weight: 100;
-    text-align: center;
-    line-height: 1.4;
-  }
 
-  .skill-tile-back p{
-    font-weight: 200;
-  }
+/* ================
+    Education Mobile
+   ================ */
 
-  .skill-tile img {
-    width: clamp(20px, 3.5vw, 80px);   /* min 40px, grows with viewport, max 80px */
-    height: clamp(20px, 3.5vw, 80px);  /* keep height proportional */
-    margin-bottom: clamp(8px, 1vw, 15px); /* optional: scale margin too */
-    filter: invert(22%) sepia(95%) saturate(6000%) hue-rotate(350deg) brightness(100%) contrast(90%);
-    user-select: none;
-  }
+.education-divider {
+  width: 100%;
+  border: 1px solid var( --color-text);
+  margin: 0 auto 30px; /* auto left & right centers it */
+}
 
-  .skill-tile p {
-    color: #e0e0e0;
-    font-size: var(--font-mobile-body);
-    text-align: center;
-    user-select: none;
-  }
+.timeline-mobile {
+  max-width: 95vw;
+  --line-left: 17vw;     /* fixed anchor — does not scale */
+  --dot-size: 6vw;
+  position: relative;
+  padding-left: calc(var(--line-left) + var(--dot-size));
+}
+
+/* Vertical line */
+.timeline-mobile::before {
+  content: "";
+  position: absolute;
+  left: var(--line-left);
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e0e0e0;
+  z-index: 1;
+}
+
+/* Each item */
+.timeline-mobile-item {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.timeline-mobile-content {
+  margin-top: -10px; /* adjust the 0.4rem if needed */
+}
+
+
+/* The dot */
+.timeline-mobile-circle {
+  position: absolute;
+  left: calc(var(--line-left) - (var(--dot-size) / 2) + 1px);
+  width: var(--dot-size);
+  height: var(--dot-size);
+  background: var(--color-red);
+  border-radius: 50%;
+  z-index: 3;
+}
+
+/* The date — now flex aligned with the dot */
+.timeline-mobile-date {
+  position: absolute;
+  margin-top: 1vw; /* adjust the 0.4rem if needed */
+  font-size: var(--font-mobile);
+  left: calc(var(--line-left) - (var(--dot-size) / 2) - 12vw);
+  white-space: nowrap;
+  color: white;
+  font-weight: var(--font-weight);
+}
+
+/* Details box */
+.timeline-mobile-details {
+  padding: 1rem;
+  border-radius: 14px;
+}
+
+.timeline-title{
+  display: block;
+  font-size: var(--font-moblie-boxheading);
+  font-weight: var(--font-weight);
+}
+
+.timeline-college{
+  display: block;
+  font-size: var(--font-mobile);
+  font-weight: var(--font-weight);
+}
+
+.timeline-mobile-content .modules-normal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 0.5rem;
+  margin-top: 0.5rem;      /* space from title */
+  margin-bottom: 0.5rem;
+}
+
 }
 
 
@@ -965,6 +1023,8 @@ section {
 
 /* Hide mobile elements on desktop */
 .mobile-header,
+.timeline-mobile,
+.skills-mobile,
 .mobile-overlay {
   display: none;
 }
@@ -1005,8 +1065,7 @@ section {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: clamp(40vh, 35vh, 60vh);
-  width: clamp(40vh, 35vh, 60vh);
+  width: clamp(25vh, 35vh, 60vh);
   z-index: 1;         /* behind the text if needed */
 }
 
@@ -1049,9 +1108,9 @@ section {
   line-height: 1.5;          /* nicer readability */
   margin: 10px 0;   
   color: #b0b0b0;
+  text-align: justify;      
+  text-align-last: left;
 }
-
-
 
 
 
@@ -1108,8 +1167,8 @@ section {
 .timeline-dot {
   position: absolute;
   top: 0; /* aligns dot at the top of the line */
-  width: clamp(30px, 2.5vw, 50px);
-  height: clamp(30px, 2.5vw, 50px);
+  width: clamp(30px, 2vw, 50px);
+  height: clamp(30px, 2vw, 50px);
   background-color: var(--color-red);
   border-radius: 50%;
   z-index: 3;
@@ -1117,11 +1176,11 @@ section {
 
 /* Align dot center on the line */
 .timeline-item.left .timeline-dot {
-  right: calc(clamp(30px, 2.5vw, 50px) / 2 * -1); /* half of dot width to center over line */
+  right: calc(clamp(30px, 2vw, 50px) / 2 * -1); /* half of dot width to center over line */
 }
 
 .timeline-item.right .timeline-dot {
-  left: calc(clamp(30px, 2.5vw, 50px) / 2 * -1);;
+  left: calc(clamp(30px, 2vw, 50px) / 2 * -1);;
 }
 
 /* Timeline content box */
@@ -1178,20 +1237,10 @@ section {
   transform: translateY(0);
 }
 
+
 /* ================
       My Work
 ==================*/
-
-.section.work .background-stripes {
-  position: absolute;
-  align-items: center;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-  pointer-events: none;
-  object-fit: cover;
-}
 
 /* Work Grid */
 .work-grid {
