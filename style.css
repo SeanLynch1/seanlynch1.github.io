@@ -6,7 +6,7 @@
   --navbar-width: 180px; /* width of navbar column */
   --font-heading: clamp(2.5rem, 3vw + 1rem, 5rem);;      /* for main headings */
   --font-subheading: clamp(.8rem, 1.5vw + 0.8rem, 3.5rem);   /* for subheadings */
-  --font-boxheading: clamp(.5rem, 1vw + 0.6rem, 3.5rem);
+  --font-boxheading: clamp(.4rem, 1.25vw + 0.8rem, 3.5rem);
   --font-body: clamp(.5rem, 1vw + 0.15rem, 2rem);  /* for normal text */
   --font-nav: clamp(0.5rem, 1vw + 0.125rem, 2rem);
   --font-mobile:clamp(.5rem, 1vw + .75rem, 2rem);
@@ -752,8 +752,8 @@ section {
 
   /* Landing Image as circle */
   .landing-image img {
-    width: clamp(120px, 35vw, 180px);   /* Scales with screen, but stays reasonable */
-    height: clamp(120px, 35vw, 180px);  /* Keep it a perfect circle */
+    width: clamp(120px, 35vw, 120px);   /* Scales with screen, but stays reasonable */
+    height: clamp(120px, 35vw, 120px);  /* Keep it a perfect circle */
     border-radius: 50%;     /* makes it circular */
     background: linear-gradient(to top, #ff0000, transparent); /* red to transparent, bottom-up */
     border: 2px solid #ffffff; /* white border */
@@ -1005,8 +1005,8 @@ section {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 40%;         /* adjust size as needed */
-  height: auto;
+  width: clamp(40vh, 35vh, 60vh);
+  width: clamp(40vh, 35vh, 60vh);
   z-index: 1;         /* behind the text if needed */
 }
 
@@ -1219,28 +1219,10 @@ section {
 
 /* Logos not in capsule */
 .tile-logo {
-  width: clamp(60px, 7vw, 200px);
+  width: clamp(10vh, 8vw, 60vh);
   height: auto;
   display: block;
   margin: 1rem auto 0 auto;  /* top margin + horizontal center */
-}
-
-/* Capsule wrapper (only for Agri World) */
-.logo-capsule {
-  display: inline-block;
-  background-color: #ffffff;
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-  margin: 1rem auto 0 auto;  /* match top margin of other logos */
-  text-align: center;
-}
-
-/* Logo inside capsule */
-.logo-capsule .tile-logo {
-  width: 250px;  /* same as others */
-  height: auto;
-  display: block;
-  margin: 0 auto;
 }
 
 .work-tile h3 {
