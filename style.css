@@ -9,9 +9,10 @@
   --font-boxheading: clamp(.4rem, 1.25vw + 0.8rem, 3.5rem);
   --font-body: clamp(0.2rem, 1vw + 0.1rem, 1.6rem);  /* for normal text */
   --font-nav: clamp(0.2rem, .9vw + 0.1rem, 1.6rem);
-  --font-mobile:clamp(.5rem, 1vw + .55rem, 2rem);
+  --font-mobile:clamp(.5rem, 1vw + .7rem, 2.2rem);
   --font-mobile-about:clamp(.5rem, 1vw + .5rem, 2rem);
   --font-moblie-boxheading: clamp(.2rem, 1vw + 0.8rem, 3.5rem);
+  --font-mobile-boxtitle: clamp(1.5rem, 1vw + 0.8rem, 5.5rem);
   --font-weight: 700;
 
   /* Fonts */
@@ -242,8 +243,6 @@ color: var(--color-red); /* or any red you prefer */
   cursor: pointer;
 }
 
-
-
 .landing-buttons-row {
   display: flex;
   justify-content: flex-start; 
@@ -383,124 +382,7 @@ color: var(--color-red); /* or any red you prefer */
   user-select: none;
 }
 
-/* Experience Section */
-#experience .section-header {
-  margin-bottom: -2vh;
-}
 
-.section.experience{
-  position: relative;   /* container for absolute wave */
-  min-height: 100vh;
-}
-
-/* Container for all experience cards */
-.experience .container {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem; /* space between each exp card */
-    z-index: 1;
-}
-
-#experience {
-    padding-top: 30vh;   /* big padding above the section */
-    padding-bottom: 30vh; /* big padding below the section */
-    z-index: 1;
-}
-
-/* Main card layout */
-.exp-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* top -> middle -> bottom layout */
-  min-height: 300px; /* make it taller */
-  padding: 2rem; /* adjust for breathing room */
-  background: #1a1a1a;
-  border-radius: 1.5rem;
-  border: 0.1rem solid rgba(255,255,255,0.15);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6); /* black shadow */  
-}
-
-/* Header section */
-
-.exp-title {
-    font-size: var(--font-boxheading);
-    font-weight: var(--font-weight);
-    margin: 0;
-}
-
-.exp-company-date {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-weight: var(--font-weight);
-}
-
-.exp-separator {
-    font-weight: var(--font-weight);
-    opacity: 0.7;
-}
-.exp-company-date {
-    font-size: var(--font-body);
-    opacity: 0.9;
-}
-
-.exp-body {
-    height: 40vh; /* relative height */
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-/* Description text */
-.exp-description {
-    flex: 1;                 /* take remaining space inside exp-body */
-    overflow-y: auto;        /* enable vertical scroll */
-    padding-right: 0.5rem;   /* optional: space for scrollbar */
-    font-size: var(--font-body);
-    line-height: 1.6;
-    color: #e0e0e0;
-}
-
-.exp-description::-webkit-scrollbar {
-    width: 12px;               /* width of scrollbar */
-}
-
-.exp-description::-webkit-scrollbar-track {
-    background: #632b2b;       /* maroon track */
-    border-radius: 10px;
-}
-
-.exp-description::-webkit-scrollbar-thumb {
-    background: #ff3b3b;       /* bright red thumb */
-    border-radius: 10px;
-    border: 3px solid #632b2b; /* maroon border around thumb */
-}
-
-.exp-description::-webkit-scrollbar-thumb:hover {
-    background: #ff5c5c;       /* lighter red on hover */
-}
-
-.exp-description h4 {
-    font-size: var(--font-body);
-    font-weight: var(--font-weight);
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-    color: #ffffff;
-}
-
-.exp-description p {
-    margin-bottom: 1rem;
-}
-
-/* Bullet list */
-.exp-bullets {
-    padding-left: 1.2rem;
-    list-style: disc;
-    font-size: var(--font-body);
-}
-
-.exp-bullets li {
-    margin-bottom: 1rem;
-}
 
 /* Tags */
 .modules-normal {
@@ -519,7 +401,7 @@ color: var(--color-red); /* or any red you prefer */
   padding: 0.5rem 1.2rem; /* a bit more vertical and horizontal padding */
   white-space: nowrap;
   border-radius: 999px;
-  font-size: clamp(.7rem, .5vw + 0.5rem, 1.2rem);
+  font-size: clamp(.7rem, .5vw + 0.7rem, 2.2rem);
   text-decoration: none;
   font-weight: var(--font-weight);
   border: 1px solid #ff3b3b;   /* add 'solid' */
@@ -639,7 +521,7 @@ color: var(--color-red); /* or any red you prefer */
   height: 100%;
   background-color: #121212;
   color: #e0e0e0;
-  z-index: 1002;
+  z-index: 21002;
   transition: left 0.4s ease;
   display: flex;
   flex-direction: column;
@@ -742,7 +624,15 @@ color: var(--color-red); /* or any red you prefer */
   .desktop-navbar,
   .timeline,
   .skills-grid{
-    display:none
+  display: none;
+  }
+
+ #secret-wrapper {
+    display: none !important;
+  }
+
+  #headshot.clicked {
+    animation: none !important;
   }
   
   .page-container > section .container {
@@ -757,6 +647,9 @@ color: var(--color-red); /* or any red you prefer */
     align-items: center;
   }
 
+  .section{
+    min-height: auto;
+  }
   .section-header {
     text-align: center;
     font-size: var(--font-heading);
@@ -764,18 +657,17 @@ color: var(--color-red); /* or any red you prefer */
   }
 
   .landing {
-    margin-top: 20vw;
-    margin-bottom: -12vw;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    height: auto;        /* let it expand naturally */
+    margin-top: 15vh;
+    margin-bottom: 3vh;
   }
 
   /* Landing Image as circle */
   .landing-image img {
-    width: clamp(30vh, 35vw, 40vh);   /* Scales with screen, but stays reasonable */
-    height: clamp(30vh, 35vw, 40vh);   /* Keep it a perfect circle */
+    width: clamp(200px, 50vw + 0rem, 70vw);   /* Scales with screen, but stays reasonable */
+    height: clamp(200px, 50vw + 0rem, 70vw);   /* Keep it a perfect circle */
     border-radius: 50%;     /* makes it circular */
     background: linear-gradient(to top, #ff0000, transparent); /* red to transparent, bottom-up */
     border: 2px solid #ffffff; /* white border */
@@ -805,6 +697,7 @@ color: var(--color-red); /* or any red you prefer */
     width: 100%;            /* almost full width */
     border: 1px solid #e0e0e0;
     margin: 0 auto;
+    margin-bottom: 1vh;
   }
 
   /* Subheading / intro text */
@@ -854,53 +747,14 @@ color: var(--color-red); /* or any red you prefer */
     width: 100%;
   }
 
-  #secret-wrapper {
-  position: absolute;
-  top: -10vh;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #fff;
-  color: #000;
-  padding: 20px 25px;
-  border-radius: 20px;
-  font-weight: bold;
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4); /* bigger, softer shadow */
-  min-width: 160px;
-  text-align: center;
-  display: none;
-  z-index: 1000333333330;
-  overflow: visible;  
-  border: 3px solid #fff; /* ensures no grey border */
-}
-
-#secret-wrapper::after {
-  content: "";
-  position: absolute;
-  bottom: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-top: 18px solid #fff;
-  overflow: visible;  
-}
-
-#secret-text {
-  font-size: var(--font-mobile);
-  font-weight: var(--font-weight);
-}
-
-/* ==================
-        SKILLS
+/* =================
+      ABOUT
 ===================*/
-
 .section.about {
   position: relative;   /* container for absolute wave */
   overflow: hidden;
-  min-height: 60vh;
   padding-top: 8vh; /* gives breathing room between waves and content */
+  padding-bottom: 10vh;
 }
 
 .about-inner {
@@ -910,6 +764,9 @@ color: var(--color-red); /* or any red you prefer */
   height: 100%;             /* let it fill the container */
   max-width: 95vw;
 }
+/* ==================
+        SKILLS
+===================*/
 
 .skills-divider {
   width: 100%;
@@ -920,8 +777,6 @@ color: var(--color-red); /* or any red you prefer */
 .skills-mobile{
   margin-bottom: 20px;
 }
-
-
 
 /* ================
     Education Mobile
@@ -935,7 +790,7 @@ color: var(--color-red); /* or any red you prefer */
 
 .timeline-mobile {
   max-width: 95vw;
-  --line-left: 17vw;     /* fixed anchor — does not scale */
+  --line-left: 4vw;     /* fixed anchor — does not scale */
   --dot-size: 6vw;
   position: relative;
   padding-left: calc(var(--line-left) + var(--dot-size));
@@ -963,7 +818,6 @@ color: var(--color-red); /* or any red you prefer */
   margin-top: -10px; /* adjust the 0.4rem if needed */
 }
 
-
 /* The dot */
 .timeline-mobile-circle {
   position: absolute;
@@ -977,12 +831,8 @@ color: var(--color-red); /* or any red you prefer */
 
 /* The date — now flex aligned with the dot */
 .timeline-mobile-date {
-  position: absolute;
-  margin-top: 1vw; /* adjust the 0.4rem if needed */
   font-size: var(--font-mobile);
-  left: calc(var(--line-left) - (var(--dot-size) / 2) - 12vw);
   white-space: nowrap;
-  color: white;
   font-weight: var(--font-weight);
 }
 
@@ -996,6 +846,7 @@ color: var(--color-red); /* or any red you prefer */
   display: block;
   font-size: var(--font-moblie-boxheading);
   font-weight: var(--font-weight);
+  color: white;
 }
 
 .timeline-college{
@@ -1013,8 +864,226 @@ color: var(--color-red); /* or any red you prefer */
   margin-bottom: 0.5rem;
 }
 
+/* Work Grid */
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 2 columns */
+  grid-auto-rows: 1fr;                  /* rows same height as columns */
+  gap: 15vw;;                             /* space between tiles */
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 10vw;
 }
 
+/* Each work tile */
+.work-tile {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;                  /* make it square */
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.work-tile::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;            /* height of fade */
+  pointer-events: none;
+  z-index: 2;
+
+  /* Fade from transparent → solid background color */
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 0%,
+    rgba(87, 87, 87, 0.6) 100%
+  );
+}
+
+/* Logos not in capsule */
+.tile-logo {
+  width: clamp(35vw, 8vw, 60vh);
+  height: auto;
+  display: block;
+  margin: 1rem auto 0 auto;  /* top margin + horizontal center */
+}
+
+.work-tile h3 {
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: var(--font-mobile-boxtitle);                   /* bigger title */
+  font-weight: var(--font-weight);
+  color: #ffffff;                    /* reddish tint */
+  text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+}
+
+.work-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255,59,59,0.5);
+}
+/* Background image stretched */
+.tile-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform 0.5s;
+}
+
+.work-tile:hover .tile-background {
+  transform: scale(1.05); /* subtle zoom on hover */
+}
+
+/* Clickable content container */
+.work-tile a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* stack content from top */
+  align-items: center;         /* horizontally center all content */
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  padding: 0.5rem;
+}
+
+/* =================
+  EXPERIENCE MOBILE
+===================*/
+
+#experience .section-header {
+  margin-bottom: -2vh;
+}
+
+.section.experience{
+  position: relative;   /* container for absolute wave */
+  min-height: 100vh;
+}
+
+/* Container for all experience cards */
+.experience .container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; /* space between each exp card */
+    z-index: 1;
+}
+
+#experience {
+    padding-top: 20vw;   /* big padding above the section */
+    padding-bottom: 20vw; /* big padding below the section */
+    z-index: 1;
+}
+
+/* Main card layout */
+ .exp-card {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto auto; /* title / company / description box / bullets / modules */
+    gap: 1rem;
+    padding: 1rem;
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    min-height: 70vh; /* adjust if needed */
+  }
+
+  .exp-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .exp-title,
+  .exp-company-date {
+    margin: 0;
+    font-size: var(--font-mobile);
+
+  }
+
+  /* Make only the description scrollable */
+  .exp-description {
+    max-height: 30vh;   /* adjust height of scrollable box */
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    background: #222;   /* optional, subtle box background */
+    border-radius: 12px;
+    padding-left: 1rem;
+  }
+
+  /* Hide scrollbar */
+  .exp-description::-webkit-scrollbar {
+    display: none;
+  }
+  .exp-description {
+    -ms-overflow-style: none;  /* IE/Edge */
+    scrollbar-width: none;     /* Firefox */
+    font-size: var(--font-mobile);
+
+  }
+
+  .exp-description p {
+    margin-bottom: 1rem; /* space after each paragraph */
+    line-height: 1.6;
+    font-size: var(--font-mobile);
+}
+
+.exp-description h4 {
+    margin-top: 1.5rem;   /* space before each heading */
+    margin-bottom: 0.5rem; /* space after heading before next paragraph */
+    color: #ffffff;
+}
+
+  /* Bullets and modules below scrollable box */
+  .exp-bullets,
+  .modules-normal {
+    margin: 0;
+  }
+
+  /* Add spacing above bullets and prevent overflow */
+  .exp-bullets {
+      padding-left: 1.5rem;   /* give room for bullet points */
+      margin-top: 1rem;       /* gap between description and bullets */
+      list-style: disc;
+      font-size: var(--font-mobile);
+  }
+
+  /* Optional: give a little breathing room between individual bullets */
+  .exp-bullets li {
+      margin-bottom: 0.75rem;
+  }
+
+  .modules-normal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  /* ================
+     Footer
+  ==================*/
+
+  .footer-tech,
+  .footer-name,
+  .footer-email,
+  .footer-phone,
+  .footer-contact {
+    margin: 0.4rem 0;
+    font-size: var(--font-mobile);
+  }
+}
 
 /* ======================
    Desktop Styles
@@ -1028,6 +1097,8 @@ color: var(--color-red); /* or any red you prefer */
 .mobile-overlay {
   display: none;
 }
+
+
 
 .landing-box {
   position: relative;
@@ -1320,6 +1391,126 @@ color: var(--color-red); /* or any red you prefer */
 /* ================
 Experience Section
 ==================*/
+
+/* Experience Section */
+#experience .section-header {
+  margin-bottom: -2vh;
+}
+
+.section.experience{
+  position: relative;   /* container for absolute wave */
+  min-height: 100vh;
+}
+
+/* Container for all experience cards */
+.experience .container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; /* space between each exp card */
+    z-index: 1;
+}
+
+#experience {
+    padding-top: 30vh;   /* big padding above the section */
+    padding-bottom: 30vh; /* big padding below the section */
+    z-index: 1;
+}
+
+/* Main card layout */
+.exp-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* top -> middle -> bottom layout */
+  min-height: 300px; /* make it taller */
+  padding: 2rem; /* adjust for breathing room */
+  background: #1a1a1a;
+  border-radius: 1.5rem;
+  border: 0.1rem solid rgba(255,255,255,0.15);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6); /* black shadow */  
+}
+
+/* Header section */
+
+.exp-title {
+    font-size: var(--font-boxheading);
+    font-weight: var(--font-weight);
+    margin: 0;
+}
+
+.exp-company-date {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: var(--font-weight);
+}
+
+.exp-separator {
+    font-weight: var(--font-weight);
+    opacity: 0.7;
+}
+.exp-company-date {
+    font-size: var(--font-body);
+    opacity: 0.9;
+}
+
+.exp-body {
+    height: 40vh; /* relative height */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+/* Description text */
+.exp-description {
+    flex: 1;                 /* take remaining space inside exp-body */
+    overflow-y: auto;        /* enable vertical scroll */
+    padding-right: 0.5rem;   /* optional: space for scrollbar */
+    font-size: var(--font-body);
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.exp-description::-webkit-scrollbar {
+    width: 12px;               /* width of scrollbar */
+}
+
+.exp-description::-webkit-scrollbar-track {
+    background: #632b2b;       /* maroon track */
+    border-radius: 10px;
+}
+
+.exp-description::-webkit-scrollbar-thumb {
+    background: #ff3b3b;       /* bright red thumb */
+    border-radius: 10px;
+    border: 3px solid #632b2b; /* maroon border around thumb */
+}
+
+.exp-description::-webkit-scrollbar-thumb:hover {
+    background: #ff5c5c;       /* lighter red on hover */
+}
+
+.exp-description h4 {
+    font-size: var(--font-body);
+    font-weight: var(--font-weight);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #ffffff;
+}
+
+.exp-description p {
+    margin-bottom: 1rem;
+}
+
+/* Bullet list */
+.exp-bullets {
+    padding-left: 1.2rem;
+    list-style: disc;
+    font-size: var(--font-body);
+}
+
+.exp-bullets li {
+    margin-bottom: 1rem;
+}
+
 /* Two-column desktop layout */
   .exp-body {
       display: grid;
@@ -1334,5 +1525,4 @@ Experience Section
       overflow-y: auto;
       padding-right: 1rem;
   }
-
 }
