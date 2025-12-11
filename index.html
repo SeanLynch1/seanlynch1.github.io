@@ -466,49 +466,51 @@
             </div>
 
 <div class="exp-body">
-    <div class="exp-description">
-        <h4>Overview</h4>
-        <p>
-            Delivering data solutions using Excel, Python, Power BI, and Alteryx. Focused on analytics,
-            reporting, automation, and engineering pipelines for enterprise clients, with experience
-            across healthcare, financial services, and internal projects.
-        </p>
+    <div class = "exp-description-wrapper">
+      <div class="exp-description">
+          <h4>Overview</h4>
+          <p>
+              Delivering data solutions using Excel, Python, Power BI, and Alteryx. Focused on analytics,
+              reporting, automation, and engineering pipelines for enterprise clients, with experience
+              across healthcare, financial services, and internal projects.
+          </p>
 
-        <h4>Reinsurance & Accelerant</h4>
-        <p>
-            Worked with Accelerant, a reinsurance intermediary, primarily using Excel to manage the accounting ledger,
-            calculate credits and losses, and refine reporting processes. Gained brief exposure to Alteryx while
-            supporting reinsurance workflows and improving overall efficiency.
-        </p>
+          <h4>Reinsurance & Accelerant</h4>
+          <p>
+              Worked with Accelerant, a reinsurance intermediary, primarily using Excel to manage the accounting ledger,
+              calculate credits and losses, and refine reporting processes. Gained brief exposure to Alteryx while
+              supporting reinsurance workflows and improving overall efficiency.
+          </p>
 
-        <h4>HSE Dashboard Development</h4>
-        <p>
-            Developed a live Power BI dashboard reporting on emergency department discharges, attendances,
-            and admissions at University Hospital Kerry. This replaced a manual two-hour process of extracting data
-            from IPMS, pivoting it in Excel, and distributing reports. The dashboard, connected via Power BI Gateway,
-            refreshes every 30 minutes, with all columns and measures optimized in M and DAX code.
-        </p>
+          <h4>HSE Dashboard Development</h4>
+          <p>
+              Developed a live Power BI dashboard reporting on emergency department discharges, attendances,
+              and admissions at University Hospital Kerry. This replaced a manual two-hour process of extracting data
+              from IPMS, pivoting it in Excel, and distributing reports. The dashboard, connected via Power BI Gateway,
+              refreshes every 30 minutes, with all columns and measures optimized in M and DAX code.
+          </p>
 
-        <h4>Internal Projects & Presentations</h4>
-        <p>
-            Worked on internal projects to improve presentation and communication skills. Delivered presentations
-            to Uisce Éireann on topics including nominal vs. ordinal data, ratio and interval data, causation vs.
-            correlation, data visualisation, and storyboarding. Conducted practical Excel demos for effective
-            data storytelling.
-        </p>
+          <h4>Internal Projects & Presentations</h4>
+          <p>
+              Worked on internal projects to improve presentation and communication skills. Delivered presentations
+              to Uisce Éireann on topics including nominal vs. ordinal data, ratio and interval data, causation vs.
+              correlation, data visualisation, and storyboarding. Conducted practical Excel demos for effective
+              data storytelling.
+          </p>
 
-        <h4>SharePoint Migration</h4>
-        <p>
-            Led a SharePoint migration project, transferring four years of data from on-premise drives to SharePoint.
-            Addressed long file paths by renaming files via Python and highlighting differences using Excel color coding,
-            ensuring a smooth migration.
-        </p>
+          <h4>SharePoint Migration</h4>
+          <p>
+              Led a SharePoint migration project, transferring four years of data from on-premise drives to SharePoint.
+              Addressed long file paths by renaming files via Python and highlighting differences using Excel color coding,
+              ensuring a smooth migration.
+          </p>
 
-        <h4>Data Cleaning – Sunflower Bank</h4>
-        <p>
-            Analysed and cleaned financial datasets using Pandas and Excel, improving data quality
-            for accurate reporting and analytics.
-        </p>
+          <h4>Data Cleaning – Sunflower Bank</h4>
+          <p>
+              Analysed and cleaned financial datasets using Pandas and Excel, improving data quality
+              for accurate reporting and analytics.
+          </p>
+      </div>
     </div>
 
     <ul class="exp-bullets">
@@ -541,33 +543,37 @@
             </div>
 
             <div class="exp-body">
+    <div class = "exp-description-wrapper">
+      
+      <div class="exp-description">
+          <h4>Overview</h4>
+          <p>
+              During my time at Bank of Ireland, I worked extensively with Python, SQL, and Apache PySpark to process and manage large datasets. I also gained hands-on experience with Unix, transferring and organizing files, and using Git for version control through Bitbucket. Each task had its own branch linked to Jira tickets, and all code changes went through peer-reviewed pull requests before being merged into the main branch. Daily stand-ups and ongoing communication were integral to the workflow, ensuring collaboration across teams.
+          </p>
 
-    <div class="exp-description">
-        <h4>Overview</h4>
-        <p>
-            During my time at Bank of Ireland, I worked extensively with Python, SQL, and Apache PySpark to process and manage large datasets. I also gained hands-on experience with Unix, transferring and organizing files, and using Git for version control through Bitbucket. Each task had its own branch linked to Jira tickets, and all code changes went through peer-reviewed pull requests before being merged into the main branch. Daily stand-ups and ongoing communication were integral to the workflow, ensuring collaboration across teams.
-        </p>
+          <h4>Project 1: Data Migration</h4>
+          <p>
+              I was involved in a data migration project, moving anti-human-trafficking data from Bank of Ireland’s data warehouse into their data lake. I wrote SQL to extract the data in partitions into staging files, and additional SQL to ingest it into the data lake. These workflows were orchestrated using Oozie within HUE, a graphical interface for Unix tasks. To validate the migration, I used PySpark to check that counts and data integrity matched during UAT.
+          </p>
 
-        <h4>Project 1: Data Migration</h4>
-        <p>
-            I was involved in a data migration project, moving anti-human-trafficking data from Bank of Ireland’s data warehouse into their data lake. I wrote SQL to extract the data in partitions into staging files, and additional SQL to ingest it into the data lake. These workflows were orchestrated using Oozie within HUE, a graphical interface for Unix tasks. To validate the migration, I used PySpark to check that counts and data integrity matched during UAT.
-        </p>
+          <h4>Project 2: Mortgage Data API</h4>
+          <p>
+              The second project focused on mortgage data. I worked with APIs built on Flask, which needed to be refactored to FastAPI to comply with new data format requirements using Pydantic. The API I built received customer data and flagged potential loan defaults, which was then sent to another team for analysis.
+          </p>
 
-        <h4>Project 2: Mortgage Data API</h4>
-        <p>
-            The second project focused on mortgage data. I worked with APIs built on Flask, which needed to be refactored to FastAPI to comply with new data format requirements using Pydantic. The API I built received customer data and flagged potential loan defaults, which was then sent to another team for analysis.
-        </p>
+          <h4>Project 3: External Mortgage Data Reporting</h4>
+          <p>
+              For the third project, I built an API from scratch to send mortgage data to external entities, including CRIF, a global credit bureau, and nCino, a U.S.-based cloud banking platform used by Irish banks. Additionally, the data needed to be reported to the Central Bank of Ireland to ensure regulatory compliance. I wrote the code using Pydantic to match the schema for PUT requests as specified by CRIF and nCino documentation. This project was highly object-oriented and structured as a Python package, with multiple functions handling different use cases, such as student loans or other types of mortgages. I also conducted extensive user acceptance testing with many test cases, and the project was successfully delivered.
+          </p>
 
-        <h4>Project 3: External Mortgage Data Reporting</h4>
-        <p>
-            For the third project, I built an API from scratch to send mortgage data to external entities, including CRIF, a global credit bureau, and nCino, a U.S.-based cloud banking platform used by Irish banks. Additionally, the data needed to be reported to the Central Bank of Ireland to ensure regulatory compliance. I wrote the code using Pydantic to match the schema for PUT requests as specified by CRIF and nCino documentation. This project was highly object-oriented and structured as a Python package, with multiple functions handling different use cases, such as student loans or other types of mortgages. I also conducted extensive user acceptance testing with many test cases, and the project was successfully delivered.
-        </p>
-
-        <h4>Workflow & Collaboration</h4>
-        <p>
-            Throughout all these projects, version control, peer reviews, Jira ticket management, and daily stand-ups were part of the routine. I actively contributed to all phases of development, testing, and delivery, ensuring smooth coordination with team members and successful project outcomes.
-        </p>
+          <h4>Workflow & Collaboration</h4>
+          <p>
+              Throughout all these projects, version control, peer reviews, Jira ticket management, and daily stand-ups were part of the routine. I actively contributed to all phases of development, testing, and delivery, ensuring smooth coordination with team members and successful project outcomes.
+          </p>
+      </div>
     </div>
+
+
 
     <ul class="exp-bullets">
         <li>Apache PySpark data processing</li>
@@ -602,32 +608,36 @@
             </div>
 
             <div class="exp-body">
-    <div class="exp-description">
-        <h4>Overview</h4>
-        <p>
-            Participated in the FDM Group Graduate Programme, completing intensive training in Excel, SQL, Python, PySpark, and Power BI. Focused on analytics, programming, data engineering, and visualization skills through hands-on projects and graded assessments.
-        </p>
+      <div class="exp-description-wrapper">
+        
+        <div class="exp-description">
+            <h4>Overview</h4>
+            <p>
+                Participated in the FDM Group Graduate Programme, completing intensive training in Excel, SQL, Python, PySpark, and Power BI. Focused on analytics, programming, data engineering, and visualization skills through hands-on projects and graded assessments.
+            </p>
 
-        <h4>Excel & SQL Training</h4>
-        <p>
-            Began with Excel training, followed by six weeks of SQL. Covered advanced concepts including aggregations, groupings, correlated subqueries, and joins (inner, outer, left, right, and handling null values). Developed strong query-writing skills for complex datasets.
-        </p>
+            <h4>Excel & SQL Training</h4>
+            <p>
+                Began with Excel training, followed by six weeks of SQL. Covered advanced concepts including aggregations, groupings, correlated subqueries, and joins (inner, outer, left, right, and handling null values). Developed strong query-writing skills for complex datasets.
+            </p>
 
-        <h4>Python Programming</h4>
-        <p>
-            Completed beginner and advanced Python courses, including object-oriented programming, variables, functions, special double-underscore variables, and modular programming. Learned to write scripts calling other scripts, create unit tests and test cases, and understand loops, recursion, stacks, dictionaries, lists, linked lists, and binary trees. Assessments required a 70% pass mark.
-        </p>
+            <h4>Python Programming</h4>
+            <p>
+                Completed beginner and advanced Python courses, including object-oriented programming, variables, functions, special double-underscore variables, and modular programming. Learned to write scripts calling other scripts, create unit tests and test cases, and understand loops, recursion, stacks, dictionaries, lists, linked lists, and binary trees. Assessments required a 70% pass mark.
+            </p>
 
-        <h4>PySpark & Unix</h4>
-        <p>
-            Worked with PySpark and Unix, building a Python question-answer system and analysing financial and capital data using datasets from Our World in Data. Performed data cleansing, transformation, predictive analysis, and visualization. Presented projects to the cohort, with formal grading for performance.
-        </p>
+            <h4>PySpark & Unix</h4>
+            <p>
+                Worked with PySpark and Unix, building a Python question-answer system and analysing financial and capital data using datasets from Our World in Data. Performed data cleansing, transformation, predictive analysis, and visualization. Presented projects to the cohort, with formal grading for performance.
+            </p>
 
-        <h4>Power BI</h4>
-        <p>
-            Developed skills in Power BI, including semantic models, data modelling, DAX queries, and creating measures. Produced dashboards and visualizations to support insights and reporting across projects.
-        </p>
-    </div>
+            <h4>Power BI</h4>
+            <p>
+                Developed skills in Power BI, including semantic models, data modelling, DAX queries, and creating measures. Produced dashboards and visualizations to support insights and reporting across projects.
+            </p>
+        </div>
+      </div>
+
 
     <ul class="exp-bullets">
         <li>Advanced SQL queries & data aggregation</li>

@@ -9,9 +9,9 @@
   --font-boxheading: clamp(.4rem, 1.25vw + 0.8rem, 3.5rem);
   --font-body: clamp(0.2rem, 1vw + 0.1rem, 1.6rem);  /* for normal text */
   --font-nav: clamp(0.2rem, .9vw + 0.1rem, 1.6rem);
-  --font-mobile:clamp(.5rem, 1vw + .7rem, 2.2rem);
-  --font-mobile-about:clamp(.5rem, 1vw + .5rem, 2rem);
-  --font-moblie-boxheading: clamp(.2rem, 1vw + 0.8rem, 3.5rem);
+  --font-mobile:clamp(.8rem, 1vw + .9rem, 2.2rem);
+  --font-mobile-about:clamp(.8rem, 1vw + .5rem, 2rem);
+  --font-moblie-boxheading: clamp(.8rem, 1vw + 0.9rem, 3.5rem);
   --font-mobile-boxtitle: clamp(1.5rem, 1vw + 0.8rem, 5.5rem);
   --font-weight: 700;
 
@@ -482,6 +482,11 @@ color: var(--color-red); /* or any red you prefer */
     text-decoration: none;
 }
 
+.footer-phone a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .footer-email a:hover {
     text-decoration: underline;
 }
@@ -702,11 +707,13 @@ color: var(--color-red); /* or any red you prefer */
 
   /* Subheading / intro text */
   .landing-text p {
-    font-size: var(--font-mobile);
+    font-size: 1rem;
     color: var(--color-muted);
     line-height: 1.5;
     text-align: justify;      
     text-align-last: left;
+    text-justify: inter-word; /* default in most browsers */
+    hyphens: auto;
   }
 
   .landing-buttons-row {
@@ -1009,40 +1016,56 @@ color: var(--color-red); /* or any red you prefer */
   .exp-company-date {
     margin: 0;
     font-size: var(--font-mobile);
-
   }
 
   /* Make only the description scrollable */
-  .exp-description {
-    max-height: 30vh;   /* adjust height of scrollable box */
-    overflow-y: auto;
-    padding-right: 0.5rem;
-    background: #222;   /* optional, subtle box background */
+  .exp-description-wrapper {
+    position: relative;
+    background: #222;       /* matches card background */
     border-radius: 12px;
-    padding-left: 1rem;
+    padding-right: 6px;     /* space to push scrollbar inward */
+    padding-top: 6px;     /* space to push scrollbar inward */
+    padding-bottom: 6px;
+    height: 30vh;           /* match your previous max-height */
+    overflow: hidden;       /* hide overflow outside wrapper */
   }
 
-  /* Hide scrollbar */
-  .exp-description::-webkit-scrollbar {
-    display: none;
-  }
+  /* Scrollable content */
   .exp-description {
-    -ms-overflow-style: none;  /* IE/Edge */
-    scrollbar-width: none;     /* Firefox */
-    font-size: var(--font-mobile);
-
+      height: 100%;
+      overflow-y: auto;
+      padding-right: 2px;        /* no extra padding here */
+      padding-left: 6px;
   }
 
-  .exp-description p {
-    margin-bottom: 1rem; /* space after each paragraph */
+  .exp-description::-webkit-scrollbar {
+    width: 4px;               /* width of scrollbar */
+  }
+
+  .exp-description::-webkit-scrollbar-track {
+      border-radius: 12px;
+  }
+
+  .exp-description::-webkit-scrollbar-thumb {
+      background: #8f8f8f;       /* bright red thumb */
+      border-radius: 12px;
+  }
+
+  .exp-description::-webkit-scrollbar-thumb:hover {
+      background: #818181;       /* lighter red on hover */
+  }
+
+.exp-description p {
+    margin-bottom: 3rem; /* space after each paragraph */
     line-height: 1.6;
     font-size: var(--font-mobile);
 }
 
 .exp-description h4 {
-    margin-top: 1.5rem;   /* space before each heading */
-    margin-bottom: 0.5rem; /* space after heading before next paragraph */
+    margin-top: .15rem;   /* space before each heading */
+    margin-bottom: .15rem; /* space after heading before next paragraph */
     color: #ffffff;
+    font-size: var(--font-mobile);
 }
 
   /* Bullets and modules below scrollable box */
@@ -1097,8 +1120,6 @@ color: var(--color-red); /* or any red you prefer */
 .mobile-overlay {
   display: none;
 }
-
-
 
 .landing-box {
   position: relative;
@@ -1459,16 +1480,30 @@ Experience Section
     flex-direction: column;
     gap: 1rem;
 }
-/* Description text */
-.exp-description {
+
+.exp-description-wrapper{
     flex: 1;                 /* take remaining space inside exp-body */
     overflow-y: auto;        /* enable vertical scroll */
     padding-right: 0.5rem;   /* optional: space for scrollbar */
     font-size: var(--font-body);
     line-height: 1.6;
     color: #e0e0e0;
+    background: #222;       /* matches card background */
+    overflow: hidden;       /* hide overflow outside wrapper */
+    border-radius: 12px;
+    padding-right: 6px;     /* space to push scrollbar inward */
+    padding-top: 6px;     /* space to push scrollbar inward */
+    padding-bottom: 6px;
 }
 
+/* Description text */
+
+  .exp-description {
+      height: 100%;
+      overflow-y: auto;
+      padding-right: 1.5rem;        /* no extra padding here */
+      padding-left: 1rem;
+  }
 .exp-description::-webkit-scrollbar {
     width: 12px;               /* width of scrollbar */
 }
@@ -1491,13 +1526,13 @@ Experience Section
 .exp-description h4 {
     font-size: var(--font-body);
     font-weight: var(--font-weight);
-    margin-top: 1.5rem;
+    margin-top: .75rem;
     margin-bottom: 0.75rem;
     color: #ffffff;
 }
 
 .exp-description p {
-    margin-bottom: 1rem;
+    margin-bottom: 5rem;
 }
 
 /* Bullet list */
