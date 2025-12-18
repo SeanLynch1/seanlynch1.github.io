@@ -1157,7 +1157,7 @@ color: var(--color-red); /* or any red you prefer */
   position: absolute;
   bottom: 0;
   right: 0;
-  width: clamp(25vh, 32vh, 60vh);
+  width: clamp(15vw, 15.5vw, 60vw);
   z-index: 1;         /* behind the text if needed */
 }
 
