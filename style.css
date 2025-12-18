@@ -513,7 +513,7 @@ color: var(--color-red); /* or any red you prefer */
 }
 
 .nav-toggle {
-  font-size: 1.8rem;
+  font-size: var(--font-mobile);
   cursor: pointer;
   color: #e0e0e0;
 }
@@ -542,13 +542,14 @@ color: var(--color-red); /* or any red you prefer */
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 200px;
+  margin-top: 100px;
   gap: 20px;
+  font-size: 2rem;
 }
 
 .overlay-landing-btn img {
-  width: 28px;
-  height: 28px;
+  width: 12vw;
+  height: 12vw;
   cursor: pointer;
 }
 
@@ -563,7 +564,7 @@ color: var(--color-red); /* or any red you prefer */
 .overlay-links a {
   color: #e0e0e0;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   transition: background 0.3s;
 }
 
@@ -574,7 +575,7 @@ color: var(--color-red); /* or any red you prefer */
 }
 
 .overlay-close {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #e0e0e0;
   background: none;
   border: none;
@@ -654,7 +655,17 @@ color: var(--color-red); /* or any red you prefer */
 
   .section{
     min-height: auto;
+    scroll-margin-top: 180px;
   }
+
+  .section.about{
+    scroll-margin-top: 60px;
+  }
+
+  .section.work{
+    scroll-margin-top: 120px;
+  }
+
   .section-header {
     text-align: center;
     font-size: var(--font-heading);

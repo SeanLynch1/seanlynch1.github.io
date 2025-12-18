@@ -1,7 +1,0 @@
-<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
-  <!-- Outer bar (grey) -->
-  <path d="M 0 80 L 1200 180 L 1200 280 L 0 180 Z" fill="#cccccc" opacity="0.6"/>
-  
-  <!-- Inner bar (white) -->
-  <path d="M 0 100 L 1200 190 L 1200 265 L 0 175 Z" fill="#ffffff" opacity="0.5"/>
-</svg>
