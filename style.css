@@ -665,7 +665,7 @@ color: var(--color-red); /* or any red you prefer */
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 15vh;
+    margin-top: 16.5vh;
     margin-bottom: 3vh;
   }
 
@@ -674,7 +674,13 @@ color: var(--color-red); /* or any red you prefer */
     width: clamp(200px, 50vw + 0rem, 70vw);   /* Scales with screen, but stays reasonable */
     height: clamp(200px, 50vw + 0rem, 70vw);   /* Keep it a perfect circle */
     border-radius: 50%;     /* makes it circular */
-    background: linear-gradient(to top, #ff0000, transparent); /* red to transparent, bottom-up */
+    background: linear-gradient(
+    to top,
+    rgba(255, 0, 0, 0.9) 0%,
+    rgba(255, 0, 0, 0.6) 15%,
+    rgba(255, 0, 0, 0.2) 35%,
+    transparent 75%
+  );
     border: 2px solid #ffffff; /* white border */
     object-fit: cover;
     margin-bottom: 1rem;
