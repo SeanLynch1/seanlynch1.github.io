@@ -9,7 +9,7 @@
   --font-boxheading: clamp(.4rem, 1.25vw + 0.8rem, 3.5rem);
   --font-body: clamp(0.2rem, 1vw + 0.1rem, 1.6rem);  /* for normal text */
   --font-nav: clamp(0.2rem, .9vw + 0.1rem, 1.6rem);
-  --font-mobile:clamp(.8rem, 1vw + .9rem, 2.2rem);
+  --font-mobile:clamp(1rem, 1vw + .9rem, 2.2rem);
   --font-mobile-about:clamp(.8rem, 1vw + .5rem, 2rem);
   --font-moblie-boxheading: clamp(.8rem, 1vw + 0.9rem, 3.5rem);
   --font-mobile-boxtitle: clamp(1.5rem, 1vw + 0.8rem, 5.5rem);
@@ -401,7 +401,7 @@ color: var(--color-red); /* or any red you prefer */
   padding: 0.5rem 1.2rem; /* a bit more vertical and horizontal padding */
   white-space: nowrap;
   border-radius: 999px;
-  font-size: clamp(.7rem, .5vw + 0.7rem, 2.2rem);
+  font-size: clamp(.85rem, .5vw + 0.7rem, 2.2rem);
   text-decoration: none;
   font-weight: var(--font-weight);
   border: 1px solid #ff3b3b;   /* add 'solid' */
@@ -724,7 +724,7 @@ color: var(--color-red); /* or any red you prefer */
 
   /* Subheading / intro text */
   .landing-text p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--color-muted);
     line-height: 1.5;
     text-align: justify;      
