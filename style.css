@@ -542,7 +542,7 @@ color: var(--color-red); /* or any red you prefer */
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 60px;
+  margin-top: 15vw;
   gap: 15px;
   font-size: 2rem;
 }
@@ -564,7 +564,7 @@ color: var(--color-red); /* or any red you prefer */
 .overlay-links a {
   color: #e0e0e0;
   text-decoration: none;
-  font-size: 1.65rem;
+  font-size: 1.8rem;
   transition: background 0.3s;
 }
 
@@ -575,7 +575,7 @@ color: var(--color-red); /* or any red you prefer */
 }
 
 .overlay-close {
-  font-size: 1.65rem;
+  font-size: 1.8rem;
   color: #e0e0e0;
   background: none;
   border: none;
