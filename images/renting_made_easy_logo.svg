@@ -1,0 +1,10 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- White circle background -->
+  <circle cx="100" cy="100" r="90" fill="white"/>
+  
+  <!-- Roof -->
+  <path d="M 100 60 L 50 95 L 60 95 L 60 100 L 140 100 L 140 95 L 150 95 Z" fill="#333333" stroke="#333333" stroke-width="3" stroke-linejoin="round"/>
+  
+  <!-- House body -->
+  <path d="M 65 100 L 65 135 Q 65 142 72 142 L 128 142 Q 135 142 135 135 L 135 100 Z" fill="#333333" stroke="#333333" stroke-width="3"/>
+</svg>
